@@ -5,6 +5,8 @@ import Footer from "./components/layouts/Footer/Footer";
 import styles from "./styles/App.module.css";
 
 import Home from "./pages/Home/Home";
+import Main from "./pages/Client/Main";
+import Login from "./pages/Client/Login";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function ContentBox() {
     <div className={styles.container}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/main" element={<Main/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
     </div>
   );
