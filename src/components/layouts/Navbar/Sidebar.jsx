@@ -11,7 +11,7 @@ export default function Sidebar({ setSideToggle }) {
       <Menu>자산관리</Menu>
       <Menu>계약관리</Menu>
       <Menu>요청관리</Menu>
-      <Menu>업체관리</Menu>
+      <Menu to={'/company'}>업체관리</Menu>
       <Menu>현황관리</Menu>
       <Menu>설정</Menu>
       <ButtonWrapper>
@@ -62,7 +62,7 @@ const TitleBox = styled.div`
 
   color: #fff;
   text-align: center;
-  font-family: Poppins;
+  font-family: pretendard;
   font-size: 32px
   font-style: normal;
   font-weight: 700;
@@ -84,7 +84,7 @@ const MenuBox = styled(Link)`
   width: 172.146px;
 
   color: #fff;
-  font-family: Poppins;
+  font-family: pretendard;
   font-size: 13.244px;
   font-style: normal;
   font-weight: 700;
@@ -117,7 +117,7 @@ const Button = styled.button`
   height: 32px;
   gap: 6px;
 
-  font-family: Poppins;
+  font-family: pretendard;
   font-size: 9.943px;
   font-style: normal;
   font-weight: 600;

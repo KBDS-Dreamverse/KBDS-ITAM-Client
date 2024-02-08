@@ -78,7 +78,7 @@ const Logo = styled(Box)`
 const LogoIcon = styled.img``;
 const LogoMsg = styled.div`
   color: #000;
-  font-family: Roboto;
+  font-family: pretendard;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -104,7 +104,7 @@ const SearchIcon = styled.img`
 `;
 const SearchInput = styled.input`
   color: #252f40;
-  font-family: ?????;
+  font-family: pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -122,7 +122,7 @@ const UserImg = styled.img`
 `;
 const UserInfo = styled.div`
   color: #000;
-  font-family: 'Droid Sans';
+  font-family: pretendard;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
