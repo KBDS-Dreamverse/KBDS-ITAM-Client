@@ -1,10 +1,30 @@
 import React from 'react';
 import * as S from './Navbar.style';
 import { useState } from 'react';
-import Sidebar from './Sidebar';
+import AdminSidebar from './AdminSidebar';
+import ClientSidebar from './ClientSidebar';
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [userMode, setUserMode] = useState('admin');
+
+  const renderMenuToggle = () => {
+    console.log('togge', menuToggle, 'mode', userMode);
+    if (userMode === 'admin') {
+      return (
+        <AdminSidebar setSideToggle={setMenuToggle} setUserMode={setUserMode} />
+      );
+    }
+    if (userMode === 'client') {
+      return (
+        <ClientSidebar
+          setSideToggle={setMenuToggle}
+          setUserMode={setUserMode}
+        />
+      );
+    }
+  };
+
   return (
     <S.NavWrapper>
       <S.Container>
@@ -13,7 +33,10 @@ export default function Navbar() {
           <S.LogoIcon
             src='/assets/icon_kb.svg'
             alt='kb'
-            onClick={() => setMenuToggle((toggle) => !toggle)}
+            onClick={() => {
+              setMenuToggle((toggle) => !toggle);
+              console.log(menuToggle);
+            }}
           ></S.LogoIcon>
           <S.LogoMsg>KB ITAM POTAL</S.LogoMsg>
         </S.Logo>
@@ -31,7 +54,7 @@ export default function Navbar() {
         </S.User>
         <S.Alert src='/assets/icon_bell.svg' alt='bell'></S.Alert>
 
-        {menuToggle && <Sidebar setSideToggle={setMenuToggle} />}
+        {menuToggle && renderMenuToggle()}
       </S.Container>
     </S.NavWrapper>
   );
