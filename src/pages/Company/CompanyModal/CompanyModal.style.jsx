@@ -10,6 +10,7 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   algin-content: center;
   padding: 8px;

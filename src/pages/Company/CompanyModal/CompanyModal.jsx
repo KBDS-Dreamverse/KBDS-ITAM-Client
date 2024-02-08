@@ -1,32 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from '../../../components/ui/Modal/Modal';
 import { ModalContentWrapper } from '../../../components/ui/Modal/Modal.style';
 import COMPANY_INFO from '../../../constants';
+import companyInfos from '../../../utils/data';
 import * as S from './CompanyModal.style';
 
 export default function CompanyModal({ onClose, id, workFor }) {
-  console.log(workFor);
+  console.log(workFor, id);
+  const [message, setMessage] = useState('');
 
-  const renderAddModalContent = () => {
-    const listItems = COMPANY_INFO.map((el) => (
-      <S.Li>
-        <S.Label htmlFor={el.eng}>{el.kor}</S.Label>
-        <S.Input type='text' id={el.eng}></S.Input>
-      </S.Li>
-    ));
-    return <S.Ul>{listItems}</S.Ul>;
+  useEffect(() => {
+    if (workFor === 'add') setMessage('등록');
+    if (workFor === 'revise') setMessage('수정');
+  });
+
+  const renderModalContent = () => {
+    if (workFor === 'add') {
+      const listItems = COMPANY_INFO.map((el) => (
+        <S.Li>
+          <S.Label htmlFor={el.eng}>{el.kor}</S.Label>
+          <S.Input type='text' id={el.eng}></S.Input>
+        </S.Li>
+      ));
+      return <S.Ul>{listItems}</S.Ul>;
+    }
+    if (workFor === 'revise') {
+      const company = companyInfos[id - 1];
+      return (
+        <S.Ul>
+          <S.Li>
+            <S.Label htmlFor='업체명'>업체명</S.Label>
+            <S.Input value={company.unitCompany.name}></S.Input>
+          </S.Li>
+          <S.Li>
+            <S.Label htmlFor='사업자 번호'>사업자 번호</S.Label>
+            <S.Input value={company.unitCompany.num}></S.Input>
+          </S.Li>
+          <S.Li>
+            <S.Label htmlFor='대표자'>대표자</S.Label>
+            <S.Input value={company.unitCompany.head}></S.Input>
+          </S.Li>
+          <S.Li>
+            <S.Label htmlFor='업체 연락처'>업체 연락처</S.Label>
+            <S.Input value={company.unitCompany.phone}></S.Input>
+          </S.Li>
+          <S.Li>
+            <S.Label htmlFor='주소'>주소</S.Label>
+            <S.Input value={company.unitCompany.address}></S.Input>
+          </S.Li>
+        </S.Ul>
+      );
+    }
   };
-  // const renderReviseModalContent = () => {
-  //   const listItems = companyInfos[id - 1];
-
-  //   return <ul>{listItems()}</ul>;
-  // };
 
   return (
-    <Modal title='업체 추가하기' onClose={onClose}>
+    <Modal title={`업체 정보 ${message}`} onClose={onClose}>
       <ModalContentWrapper>
-        {renderAddModalContent()}
-        <S.AddButton>업체 등록</S.AddButton>
+        {renderModalContent()}
+        <S.AddButton>{`업체 ${message}`}</S.AddButton>
       </ModalContentWrapper>
     </Modal>
   );

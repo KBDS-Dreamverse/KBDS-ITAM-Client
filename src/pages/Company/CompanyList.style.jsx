@@ -49,7 +49,7 @@ export const ListWrapper = styled.div`
 export const ListHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 4px;
+  padding: 8px;
   border-top: 3px solid rgba(0, 0, 0, 0.49);
   border-bottom: 3px solid rgba(0, 0, 0, 0.49);
 `;
@@ -57,7 +57,20 @@ export const ListHeader = styled.div`
 export const ListBody = styled.div`
   width: 100%;
 `;
+export const Ul = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  algin-content: center;
+`;
 
+export const Li = styled.li`
+  display: flex;
+  justify-content: space-between;
+  algin-content: center;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.29);
+`;
 export const ListElement = styled.div`
   color: #000;
   font-family: pretendard;
