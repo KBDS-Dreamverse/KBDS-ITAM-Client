@@ -3,7 +3,6 @@ import Navbar from './components/layouts/Navbar/Navbar';
 import Footer from './components/layouts/Footer/Footer';
 import ClientSidebar from './components/layouts/Navbar/ClientSidebar';
 import AdminSidebar from './components/layouts/Navbar/AdminSidebar';
-import './App.css'
 
 import styles from './styles/App.module.css';
 
