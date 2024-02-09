@@ -38,7 +38,7 @@ export default function Navbar() {
               console.log(menuToggle);
             }}
           ></S.LogoIcon>
-          <S.LogoMsg>KB ITAM POTAL</S.LogoMsg>
+          <S.LogoMsg>KB ITAM PORTAL</S.LogoMsg>
         </S.Logo>
 
         <S.Search>
