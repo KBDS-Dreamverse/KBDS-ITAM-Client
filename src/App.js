@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, useLocation } from 'react-router-dom';
 import Navbar from './components/layouts/Navbar/Navbar';
 import Footer from './components/layouts/Footer/Footer';
 import ClientSidebar from './components/layouts/Navbar/ClientSidebar';
@@ -10,9 +10,11 @@ import AdminHome from './pages/Home/AdminHome';
 import ClientHome from './pages/Home/ClientHome';
 import CompanyList from './pages/Company/CompanyList';
 import Login from "./pages/Client/Login";
+import AssetRequest from './pages/LifeCycle/AssetRequest';
 
 
 function App() {
+
   const renderSidebar = () => {
     const path = window.location.pathname;
     if (path.startsWith('/client')) {
@@ -20,7 +22,7 @@ function App() {
     } else if(path.startsWith('/admin')) {
       return <AdminSidebar/>
     } else {
-      return null
+      return null;
     }
   };
   const renderNavbar = () => {
@@ -28,7 +30,7 @@ function App() {
     if(path.startsWith('/login')){
       return null;
     } else {
-      return <Navbar/>
+      return <Navbar/>;
     }
   };
 
@@ -52,6 +54,7 @@ function ContentBox() {
         <Route path='/admin/company' element={<CompanyList />} />
         <Route path='/client/home' element={<ClientHome />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path='/client/asset/request' element={<AssetRequest/>}/>
       </Routes>
     </div>
   );

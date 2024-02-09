@@ -10,7 +10,7 @@ export const Container = styled.div`
   height:100%
   color: #000;
   text-align: center; /* 텍스트 가운데 정렬 */
-  font-family: Roboto;
+  font-family: pretendard;
   font-size: 45px;
   font-style: normal;
   font-weight: 400;
@@ -29,7 +29,7 @@ export const Title = styled.div`
   color: #000;
   text-align: center; /* 텍스트 가운데 정렬 */
   margin: 0 auto; /* 수평 가운데 정렬 */
-  font-family: Roboto;
+  font-family: pretendard;
   font-size: 75px;
   font-style: normal;
   font-weight: 540;
@@ -46,7 +46,7 @@ export const Detail = styled.div`
   justify-content: center;
   text-align: center; /* 텍스트 가운데 정렬 */
   margin: 0 auto; /* 수평 가운데 정렬 */
-  font-family: Roboto;
+  font-family: pretendard;
   font-size: 20px;
   font-weight: 400;
   line-height: 140%;
@@ -69,10 +69,11 @@ export const LoginBtn = styled.button`
   background: #000;
   color: #FFF;
   text-align: center; /* 텍스트 가운데 정렬 */
-  font-family: Roboto;
+  font-family: pretendard;
   font-size: 27.793px;
   font-weight: 400;
   line-height: normal;
+  margin-left : 20px;
 `;
 
 export const BackImg = styled.img`

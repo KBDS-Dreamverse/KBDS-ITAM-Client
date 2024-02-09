@@ -1,7 +1,9 @@
 import React from "react";
 import * as S from "./Login.style"
+import { useNavigate } from 'react-router-dom';
 
 export default function Login(){
+    const navigate = useNavigate();
     return(
         <>
         <S.Container>
@@ -13,7 +15,9 @@ export default function Login(){
                     type="text"
                 />
             
-            <S.LoginBtn>로그인</S.LoginBtn>
+            <S.LoginBtn onClick={() => {
+            navigate('/client/home');
+          }}>로그인</S.LoginBtn>
             <S.BackImg  src= '/assets/login_background.svg'></S.BackImg>
             </div>
         </S.Container>
