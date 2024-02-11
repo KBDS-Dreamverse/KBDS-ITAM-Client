@@ -14,7 +14,7 @@ align-items: center; /* 수직 가운데 정렬 */
 export const Main = styled.div`
   width: calc(100% - 201px); /* 사이드바의 너비를 빼고 나머지 부분을 차지하도록 설정 */
   margin-left : 201px;
-  background: #568956;
+  background: #F8F9FA;
   padding-top : 30px;
 
 `;
@@ -59,7 +59,7 @@ padding-top : 30px;
 font-size : 25px;
 overflow-y: auto;
 height : 700px;
-background:#67748E;
+background:#FFF;
 `
 export const Li = styled.li`
   display: flex;
@@ -80,24 +80,6 @@ font-weight: 600;
 line-height: normal;
 `
 
-
-export const InputDate = styled.input`
-width : 250px;
-height: 25px;
-margin : 0px 10px;
-border-radius: 3px;
-border: 1px solid #000;
-
-`
-export const InputText = styled.input`
-width : 700px;
-height: 300px;
-margin : 0px 10px;
-vertical-align: top;
-border-radius: 5px;
-border: 1px solid #000;
-font-size : 15px;
-`
 export const CheckBox = styled.text`
 width : 700px;
 height: 300px;
@@ -124,3 +106,102 @@ font-weight: 400;
 float: right;
 `
 
+export const Table = styled.table`
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+`;
+
+export const TableRow = styled.tr`
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #b0b0b0;
+    
+`;
+
+export const TableRowLast = styled.tr`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const TableHeader = styled.th`
+    width: 300px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+`;
+
+export const TableCell = styled.td`
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #b0b0b0;
+    font-size: 18px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 30px;
+`;
+
+export const TableCellInput = styled.td`
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #b0b0b0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    
+`;
+
+export const InputDate = styled.input`
+    display: inline-flex;
+    width: 400px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+
+    border: 1px solid #bdb4b4;
+    outline: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    &::placeholder {
+        color: #bdb4b4;
+    }
+`;
+export const InputText = styled.input`
+    display: inline-flex;
+    width: 850px;
+    height :200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+
+    border: 1px solid #bdb4b4;
+    outline: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    &::placeholder {
+        color: #bdb4b4;
+    }
+`
+export const InputCheck = styled.input`
+margin-left: 10px;
+margin-right: 10px;
+`;
+
+export const Text = styled.div`
+margin-left: 10px;
+margin-right: 10px;
+
+`;
