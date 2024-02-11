@@ -1,7 +1,9 @@
 import React from 'react';
-import * as S from './Sidebar.style';
+import { useNavigate } from 'react-router-dom';
+import * as S from './AdminSidebar.style';
 
-export default function Sidebar({ setSideToggle }) {
+export default function AdminSidebar({ setSideToggle, setUserMode }) {
+  const navigate = useNavigate();
   return (
     <S.SideWrapper onClick={() => setSideToggle(false)}>
       <S.Company>KBDS</S.Company>
@@ -18,7 +20,12 @@ export default function Sidebar({ setSideToggle }) {
           <S.BackIcon src='/assets/icon_back.svg' alt='back'></S.BackIcon>
           뒤로가기
         </S.BackButton>
-        <S.DoorButton>
+        <S.DoorButton
+          onClick={() => {
+            setUserMode('client');
+            navigate('/client/home');
+          }}
+        >
           <S.DoorIcon src='/assets/icon_door.svg' alt='door'></S.DoorIcon>
           ITAM 포탈로 이동
         </S.DoorButton>
