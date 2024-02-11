@@ -85,6 +85,8 @@ export const User = styled(Box)``;
 export const UserImg = styled.img`
   width: 40px;
   height: 40px;
+  object-fit : cover;
+  border-radius: 50%; /* 50%로 설정하여 이미지를 동그랗게 만듭니다. */
 `;
 export const UserInfo = styled.div`
   color: #000;

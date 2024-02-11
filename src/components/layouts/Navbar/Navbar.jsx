@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './Navbar.style';
 import { useState } from 'react';
 import AdminSidebar from './AdminSidebar';
-import ClientSidebar from './ClientSidebar';
+import ClientSidebar from './ClientAssetSidebar';
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -49,8 +49,8 @@ export default function Navbar() {
           <S.SearchInput placeholder='Type here...'></S.SearchInput>
         </S.Search>
         <S.User>
-          <S.UserImg src='/assets/icon_user.svg'></S.UserImg>
-          <S.UserInfo>채희선(2020202020)/계열사/부서</S.UserInfo>
+          <S.UserImg src={sessionStorage.getItem("userPhoto")}></S.UserImg>
+          <S.UserInfo>{sessionStorage.getItem("userName")}({sessionStorage.getItem("userId")})/{sessionStorage.getItem("userCorp")}/{sessionStorage.getItem("userDept")}</S.UserInfo>
         </S.User>
         <S.Alert src='/assets/icon_bell.svg' alt='bell'></S.Alert>
 
