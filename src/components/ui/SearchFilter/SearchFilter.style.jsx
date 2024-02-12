@@ -3,38 +3,60 @@ import styled from 'styled-components';
 export const FilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 401.62px;
-  height: 66.493px;
+  justify-content: center;
+  padding: 10px;
+  align-items: flex-start;
 
   border: 0.484px solid #000;
   background: #fff;
 `;
-export const FileterContents = styled.div`
+export const FilterContents = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding: 5px;
 `;
 
 export const FilterLabel = styled.label`
+  display: inline;
+  padding: 0 4px;
   color: #000;
-  font-family: ABeeZee;
-  font-size: 9.672px;
+  font-family: pretendard;
+  font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 `;
 export const FilterInput = styled.input`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: #d9d9d9;
-  height: 15.958px;
+  height: 16px;
+  border: none;
+`;
+export const LongInput = styled(FilterInput)`
+  width: 80px;
+`;
+export const MediumInput = styled(FilterInput)`
+  width: 44px;
+`;
+export const ShortInput = styled(FilterInput)`
+  width: 16px;
 `;
 
-export const PeriodLabel = styled(FilterLabel)``;
-export const ProductName = styled.div``;
-
 export const SearchButton = styled.button`
-  width: 37.236px;
-  height: 17.893px;
-  background: #d9d9d9;
+  border-radius: 4px;
+  width: 38px;
+  height: 18px;
+  margin: 0 0 0 10px;
+
+  background: #fab809;
+  color: #fff;
+  font-family: pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;

@@ -6,7 +6,7 @@ export const SideWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-content: center;
+  align-items: center;
 
   position: fixed;
   top: 64px;

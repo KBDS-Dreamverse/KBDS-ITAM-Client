@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import Button160 from '../../../components/atoms/Button160';
 
 export const Wrapper = styled.div`
-  width: 90%;
+  width: 92%;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
 `;
 
 export const Title = styled.div`
@@ -24,7 +23,7 @@ export const CategoryBar = styled.div`
   background: #d9d9d9;
   display: flex;
   justify-content: space-around;
-  align-content: center;
+  align-items: center;
   border-radius: 4px;
 `;
 export const CategoryName = styled.button`
@@ -65,6 +64,8 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
+  box-sizing: border-box;
+
   display: flex;
   justify-content: space-between;
   algin-content: center;
@@ -78,22 +79,24 @@ export const ListElement = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 export const Name = styled(ListElement)`
-  width: 120px;
+  width: 23%;
 `;
 export const Num = styled(ListElement)`
-  width: 116px;
+  width: 15%;
 `;
 export const Head = styled(ListElement)`
-  width: 116px;
+  width: 15%;
 `;
 export const Phone = styled(ListElement)`
-  width: 130px;
+  width: 15%;
 `;
 export const Address = styled(ListElement)`
-  width: 360px;
-  box-sizing: border-box;
+  width: 32%;
 `;
 
 export const ButtonWrapper = styled.div`

@@ -5,11 +5,9 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import useModal from '../../../hooks/useModal';
 import CompanyModal from './CompanyModal/CompanyModal';
-import companyInfos from '../../../utils/data';
+import { companyInfos } from '../../../utils/data';
 
 export default function CompanyList() {
-  const navigate = useNavigate();
-
   const [workFor, setWorkFor] = useState();
   const [companyID, setCompanyID] = useState();
   const { isOpen, openModal, closeModal } = useModal();

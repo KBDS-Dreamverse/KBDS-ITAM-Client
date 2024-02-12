@@ -1,4 +1,4 @@
-const companyInfos = [
+export const companyInfos = [
   {
     id: 1,
     unitCompany: {
@@ -37,4 +37,50 @@ const companyInfos = [
   },
 ];
 
-export default companyInfos;
+export const assetInfos = [
+  {
+    id: 1,
+    unitAsset: {
+      name: 'Microsoft Word 2010',
+      division: '내부자산',
+      tag: '은행',
+      category: '응용SW',
+      cost: '110,000원',
+      version: 'v1.0',
+      manager: '박서연',
+      manual: '',
+      company: 'Microsoft',
+      date: '2023-02-13',
+    },
+  },
+  {
+    id: 2,
+    unitAsset: {
+      name: 'Microsoft Word 2010',
+      division: '내부자산',
+      tag: '은행',
+      category: '응용SW',
+      cost: '110,000원',
+      version: 'v1.0',
+      manager: '박서연',
+      manual: '',
+      company: 'Microsoft',
+      date: '2023-02-13',
+    },
+  },
+  {
+    id: 3,
+    unitAsset: {
+      name: 'Microsoft Word 2010',
+      division: '내부자산',
+      tag: '은행',
+      category: '시스템인프라SW',
+      cost: '110,000원',
+      version: 'v1.0',
+      manager: '박서연',
+      manual: '',
+      company: 'Microsoft',
+      date: '2023-02-13',
+    },
+  },
+];

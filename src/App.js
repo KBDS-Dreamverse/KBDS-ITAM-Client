@@ -9,6 +9,7 @@ import CompanyList from './pages/Admin/Company/CompanyList';
 import AssetList from './pages/Admin/Asset/AssetList';
 
 import ClientHome from './pages/Client/Home/ClientHome';
+import AssetRegister from './pages/Admin/Asset/Register/AssetRegister';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function ContentBox() {
         <Route path='/admin/home' element={<AdminHome />} />
         <Route path='/admin/company' element={<CompanyList />} />
         <Route path='/admin/asset' element={<AssetList />} />
+        <Route path='/admin/asset/register' element={<AssetRegister />} />
 
         <Route path='/client/home' element={<ClientHome />} />
       </Routes>
