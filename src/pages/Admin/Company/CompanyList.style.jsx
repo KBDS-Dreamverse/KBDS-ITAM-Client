@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button160 from '../../components/atoms/Button160';
+import Button160 from '../../../components/atoms/Button160';
 
 export const Wrapper = styled.div`
   width: 90%;

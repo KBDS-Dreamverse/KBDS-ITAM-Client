@@ -4,7 +4,7 @@ import * as S from './ClientHome.style';
 export default function ClientHome() {
   return (
     <S.HomeWrapper>
-      Home
+      ClientHome
       <S.DashBoard></S.DashBoard>
     </S.HomeWrapper>
   );

@@ -4,9 +4,11 @@ import Footer from './components/layouts/Footer/Footer';
 
 import styles from './styles/App.module.css';
 
-import AdminHome from './pages/Home/AdminHome';
-import ClientHome from './pages/Home/ClientHome';
-import CompanyList from './pages/Company/CompanyList';
+import AdminHome from './pages/Admin/Home/AdminHome';
+import CompanyList from './pages/Admin/Company/CompanyList';
+import AssetList from './pages/Admin/Asset/AssetList';
+
+import ClientHome from './pages/Client/Home/ClientHome';
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function ContentBox() {
   return (
     <div className={styles.container}>
       <Routes>
+        <Route path='/' element={<AdminHome />} />
         <Route path='/admin/home' element={<AdminHome />} />
         <Route path='/admin/company' element={<CompanyList />} />
+        <Route path='/admin/asset' element={<AssetList />} />
 
         <Route path='/client/home' element={<ClientHome />} />
       </Routes>

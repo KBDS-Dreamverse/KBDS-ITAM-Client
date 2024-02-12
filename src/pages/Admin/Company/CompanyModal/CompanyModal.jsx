@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Modal from '../../../components/ui/Modal/Modal';
-import { ModalContentWrapper } from '../../../components/ui/Modal/Modal.style';
-import COMPANY_INFO from '../../../constants';
-import companyInfos from '../../../utils/data';
+import Modal from '../../../../components/ui/Modal/Modal';
+import { ModalContentWrapper } from '../../../../components/ui/Modal/Modal.style';
+import COMPANY_INFO from '../../../../constants';
+import companyInfos from '../../../../utils/data';
 import * as S from './CompanyModal.style';
 
 export default function CompanyModal({ onClose, id, workFor }) {

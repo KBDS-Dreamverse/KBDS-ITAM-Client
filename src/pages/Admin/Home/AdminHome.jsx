@@ -4,7 +4,7 @@ import * as S from './AdminHome.style';
 export default function AdminHome() {
   return (
     <S.HomeWrapper>
-      Home
+      AdminHome
       <S.DashBoard></S.DashBoard>
     </S.HomeWrapper>
   );
