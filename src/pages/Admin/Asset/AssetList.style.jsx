@@ -43,6 +43,7 @@ export const CategoryName = styled.button`
 
   &:focus {
     font-weight: 700;
+    color: #545045;
   }
 `;
 export const CategoryCount = styled.div`
@@ -59,19 +60,23 @@ export const FilterContainer = styled.div`
 `;
 
 export const ListWrapper = styled.section`
-  background: white;
   margin-top: 20px;
-  height: 50vh;
 `;
+
 export const ListHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px;
   border-top: 3px solid rgba(0, 0, 0, 0.49);
   border-bottom: 3px solid rgba(0, 0, 0, 0.49);
+  background: white;
+  padding-right: 24px;
 `;
 export const ListBody = styled.div`
   width: 100%;
+  height: 52vh;
+  overflow: scroll;
+  background: white;
 `;
 export const Ul = styled.ul`
   display: flex;
@@ -81,7 +86,6 @@ export const Ul = styled.ul`
 `;
 export const Li = styled.li`
   box-sizing: border-box;
-
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -128,7 +132,7 @@ export const Date = styled(ListElement)`
   width: 14%;
 `;
 export const ButtonWrapper = styled.div`
-  padding: 10px;
+  padding: 24px;
   text-align: center;
 `;
 export const AddButton = styled(Button160)`

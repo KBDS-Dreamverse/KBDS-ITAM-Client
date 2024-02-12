@@ -41,9 +41,7 @@ export const CategoryName = styled.button`
   }
 `;
 export const ListWrapper = styled.div`
-  background: white;
   margin-top: 20px;
-  height: 50vh;
 `;
 export const ListHeader = styled.div`
   display: flex;
@@ -51,10 +49,15 @@ export const ListHeader = styled.div`
   padding: 8px;
   border-top: 3px solid rgba(0, 0, 0, 0.49);
   border-bottom: 3px solid rgba(0, 0, 0, 0.49);
+  background: white;
+  padding-right: 24px;
 `;
 
 export const ListBody = styled.div`
   width: 100%;
+  height: 52vh;
+  overflow: scroll;
+  background: white;
 `;
 export const Ul = styled.ul`
   display: flex;
@@ -100,7 +103,7 @@ export const Address = styled(ListElement)`
 `;
 
 export const ButtonWrapper = styled.div`
-  padding: 10px;
+  padding: 16px;
   text-align: center;
 `;
 export const AddButton = styled(Button160)`
