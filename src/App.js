@@ -11,6 +11,7 @@ import ClientHome from './pages/Home/ClientHome';
 import CompanyList from './pages/Company/CompanyList';
 import Login from "./pages/Client/Login";
 import AssetRequest from './pages/LifeCycle/AssetRequest';
+import AssetInfo from './pages/LifeCycle/AssetInfo';
 
 
 function App() {
@@ -57,6 +58,7 @@ function ContentBox() {
         <Route path='/client/home' element={<ClientHome />} />
         <Route path="/login" element={<Login/>}/>
         <Route path='/client/asset/request' element={<AssetRequest/>}/>
+        <Route paht='/client/asset/info' element={<AssetInfo/>}/>
       </Routes>
     </div>
   );
