@@ -5,7 +5,8 @@ export const API = {
     //회원관리 API
     LOGIN: `${BASE_URL}/login`,
     USER_INFO: `${BASE_URL}/userInfo`,
-    DEPT_INFO: `${BASE_URL}/dept`
+    DEPT_INFO: `${BASE_URL}/dept`,
+    DEPT_ASSET: `${BASE_URL}/dept/asset`
 
     //CLIENT API
 

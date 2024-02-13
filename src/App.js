@@ -37,9 +37,9 @@ function ContentBox() {
         <Route path='/admin/company' element={<CompanyList />} />
         <Route path='/client/home' element={<ClientHome />} />
         <Route path="/login" element={<Login/>}/>
-        <Route path='/client/asset/request' element={<AssetRequest/>}/>
+        <Route path='/client/asset/:deptId/:contId/request' element={<AssetRequest/>}/>
         <Route path='/client/:deptId/list' element={<DepartmentAssetList/>}/>
-        <Route path='/client/asset/info' element={<AssetInfo/>}/>
+        <Route path='/client/asset/:deptId/:contId/info' element={<AssetInfo/>}/>
       </Routes>
     </div>
   );

@@ -35,7 +35,7 @@ export default function ClientSidebar({ setSideToggle, setUserMode }) {
 
 
   return (
-    <S.SideWrapper onClick={() => setSideToggle(false)}>
+    <S.SideWrapper>
       <S.Company>{sessionStorage.getItem("userCorp")}</S.Company>
       <S.Company>{sessionStorage.getItem("userDept")}</S.Company>
       {selectedDepts.map((dept)=>(

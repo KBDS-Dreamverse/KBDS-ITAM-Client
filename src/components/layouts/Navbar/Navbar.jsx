@@ -24,10 +24,13 @@ export default function Navbar() {
     }
     if (userMode === 'client') {
       if(path.startsWith('/client/asset')){
-        return(<ClientAssetSidebar
-          setSideToggle={setMenuToggle}
-          setUserMode={setUserMode}
-        />)
+        return(
+          null
+        // <ClientAssetSidebar
+        //   setSideToggle={setMenuToggle}
+        //   setUserMode={setUserMode}
+        // />
+        )
         
       }
       return (

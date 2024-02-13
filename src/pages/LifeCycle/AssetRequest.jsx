@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import * as S from "./AssetRequest.style";
 import { DayPicker } from 'react-day-picker';
 import DateModal from "./DatePickerModal";
+import ClientAssetSidebar from "../../components/layouts/Navbar/ClientAssetSidebar";
+import { useParams } from "react-router-dom";
 
 export default function AssetRequest() {
     const [startDate, setStartDate] = useState("");
@@ -10,6 +12,9 @@ export default function AssetRequest() {
     const [isStartDateModalOpen, setIsStartDateModalOpen] = useState(false);
     const [isEndDateModalOpen, setIsEndDateModalOpen] = useState(false);
 
+    const { deptId } = useParams();
+    const { contId } = useParams();
+    
     const handleOpenStartDateModal = () => {
         setIsStartDateModalOpen(true);
     };
@@ -43,7 +48,9 @@ export default function AssetRequest() {
 
     return (
         <>
+        <ClientAssetSidebar deptId={deptId} contId={contId}/>
             <S.Wrapper>
+                
                 <S.Main>
                     <S.Header>
                         <S.HeaderTitle>자동차 보험 관리 시스템</S.HeaderTitle>
