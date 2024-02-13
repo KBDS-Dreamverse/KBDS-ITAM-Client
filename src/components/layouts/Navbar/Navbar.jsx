@@ -3,12 +3,16 @@ import * as S from './Navbar.style';
 import { useState } from 'react';
 import AdminSidebar from './AdminSidebar';
 import ClientSidebar from './ClientAssetSidebar';
+import ClientAssetSidebar from './ClientAssetSidebar';
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [userMode, setUserMode] = useState('admin');
 
   const renderMenuToggle = () => {
+
+
     console.log('togge', menuToggle, 'mode', userMode);
     if (userMode === 'admin') {
       return (

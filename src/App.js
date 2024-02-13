@@ -11,35 +11,16 @@ import ClientHome from './pages/Home/ClientHome';
 import CompanyList from './pages/Company/CompanyList';
 import Login from "./pages/Client/Login";
 import AssetRequest from './pages/LifeCycle/AssetRequest';
+import DepartmentAssetList from './pages/Client/DepartmentAssetList';
 
 
 function App() {
 
-  function RenderNavbar() {
-    const location = useLocation();
-    const hideNavbar = location.pathname === '/login';
-    return hideNavbar ? null : <Navbar />;
-  }
-
-  function RenderSidebar() {
-    const location = useLocation();
-    const path = location.pathname;
-    if (path.startsWith('/client/asset')) {
-      return <ClientAssetSidebar />;
-    } else if (path.startsWith('/client')) {
-      return <ClientSidebar />;
-    } else if (path.startsWith('/admin')) {
-      return <AdminSidebar />;
-    } else {
-      return null;
-    }
-  }
 
   return (
     <div className={styles.screen}>
       <BrowserRouter>
-        <RenderNavbar />      
-        <RenderSidebar/>
+        <Navbar />
         <ContentBox />
         <Footer />
       </BrowserRouter>
@@ -57,6 +38,7 @@ function ContentBox() {
         <Route path='/client/home' element={<ClientHome />} />
         <Route path="/login" element={<Login/>}/>
         <Route path='/client/asset/request' element={<AssetRequest/>}/>
+        <Route path='/client/:deptId/list' element={<DepartmentAssetList/>}/>
       </Routes>
     </div>
   );

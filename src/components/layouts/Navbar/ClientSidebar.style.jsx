@@ -56,7 +56,7 @@ export const MenuBox = styled(Link)`
   font-family: pretendard;
   font-size: 13.244px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 14.915px; /* 112.615% */
   letter-spacing: 0.132px;
 `;
