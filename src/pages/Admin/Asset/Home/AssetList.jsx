@@ -11,7 +11,7 @@ export default function AssetList() {
     const listItems = assetInfos.map((el) => (
       <S.Li
         onDoubleClick={() => {
-          navigate(`/team/${el.id}/update`);
+          navigate(`/admin/asset/${el.id}/detail`);
         }}
       >
         <S.Name>{el.unitAsset.name}</S.Name>

@@ -235,3 +235,50 @@ export const assetInfos = [
     },
   },
 ];
+export const assetHistoryInfos = [
+  {
+    id: 1,
+    unitHistory: {
+      manager: '시스템 관리자',
+      activity: '필드 변경',
+      date: '2024-01-24 11:47',
+      descrip: 'State: In Use',
+    },
+  },
+  {
+    id: 2,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 2,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 3,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 4,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+];

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button160 from '../../../../components/atoms/Button160';
+import Button80 from '../../../../components/atoms/Button160';
 
 export const Wrapper = styled.div`
   width: 92%;
@@ -111,36 +112,18 @@ export const Input400 = styled(Input)`
 export const Input410 = styled(Input)`
   width: 410px;
 `;
-
-export const MediumButton = styled.button`
-  display: flex;
-  width: 84.454px;
-  height: 28px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-  background-color: #d9d9d9;
-  color: #000;
-
-  text-align: center;
-  font-family: pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: 6px;
-`;
-export const LongButton = styled.button`
-  display: flex;
+export const Button120 = styled.button`
   width: 120px;
+  display: flex;
   height: 28px;
   justify-content: center;
-  text-align: center;
   align-items: center;
+  text-align: center;
 
-  background-color: #d9d9d9;
-  color: #000;
+  border: none;
+  background: #d9d9d9;
+  color: black;
+  cursor: pointer;
 
   text-align: center;
   font-family: pretendard;
@@ -148,7 +131,6 @@ export const LongButton = styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 6px;
 `;
 export const DropDownButton = styled.button`
   display: flex;

@@ -3,6 +3,7 @@ import * as S from './AssetRegister.style';
 import useModal from '../../../../hooks/useModal';
 import AssetModal from '../Modal/AssetModal';
 import CompanyModal from '../../Company/Modal/CompanyModal';
+import Button80 from '../../../../components/atoms/Button80';
 
 export default function AssetRegister() {
   const [assetValue, setAssetValue] = useState('Y');
@@ -43,7 +44,7 @@ export default function AssetRegister() {
           <S.Label htmlFor='자산 태그'>자산 태그</S.Label>
           <S.InputContainer>
             <S.Input300 type='text'></S.Input300>
-            <S.MediumButton
+            <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('tag');
@@ -51,14 +52,14 @@ export default function AssetRegister() {
               }}
             >
               선택
-            </S.MediumButton>
+            </Button80>
           </S.InputContainer>
         </S.Li>
         <S.Li>
           <S.Label htmlFor='SW 카테고리'>SW 카테고리</S.Label>
           <S.InputContainer>
             <S.Input300 type='text'></S.Input300>
-            <S.MediumButton
+            <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('category');
@@ -66,7 +67,7 @@ export default function AssetRegister() {
               }}
             >
               선택
-            </S.MediumButton>
+            </Button80>
           </S.InputContainer>
         </S.Li>
         <S.Li>
@@ -80,7 +81,7 @@ export default function AssetRegister() {
           <S.Label htmlFor='버전'>버전</S.Label>
           <S.InputContainer>
             <div>5</div>
-            <S.MediumButton
+            <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('version');
@@ -88,7 +89,7 @@ export default function AssetRegister() {
               }}
             >
               버전 입력
-            </S.MediumButton>
+            </Button80>
           </S.InputContainer>
         </S.Li>
         <S.Li>
@@ -111,14 +112,14 @@ export default function AssetRegister() {
             <S.DropDownButton>
               <S.DropDownImg src='/assets/icon_dropdown.svg'></S.DropDownImg>
             </S.DropDownButton>
-            <S.LongButton
+            <S.Button120
               onClick={() => {
                 openModal();
                 setWorkFor('add');
               }}
             >
               업체 추가
-            </S.LongButton>
+            </S.Button120>
           </S.InputContainer>
         </S.Li>
       </S.Ul>
