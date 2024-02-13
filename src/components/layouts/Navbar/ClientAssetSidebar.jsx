@@ -1,8 +1,11 @@
 import * as S from './ClientSidebar.style';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function ClientAssetSidebar({ setSideToggle, setUserMode }) {
   const navigate = useNavigate();
+
+
 
   return (
     <S.SideWrapper onClick={() => setSideToggle(false)}>
@@ -14,7 +17,7 @@ export default function ClientAssetSidebar({ setSideToggle, setUserMode }) {
       <S.SubMenu>- 설치 가이드</S.SubMenu>
       <S.SubMenu>- 사용 가이드</S.SubMenu>
       <S.Menu>대시보드</S.Menu>
-      <S.Menu >폐기</S.Menu>
+      <S.Menu to="/client/asset/DEPT1/1/expire">사용 중단</S.Menu>
       <S.ButtonWrapper>
         <S.BackButton>
           <S.BackIcon src='/assets/icon_back.svg' alt='back'></S.BackIcon>

@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from "react";
-import * as S from './AssetStop.style'; // 이 부분은 실제 스타일 파일에 맞게 변경해야 합니다.
+import { useParams } from 'react-router-dom';
+import * as S from './AssetExpire.style'; // 이 부분은 실제 스타일 파일에 맞게 변경해야 합니다.
 import axios from "axios";
 import { API } from "../../config";
 
 export default function AssetStop() {
-  // 상태 관리 로직은 필요에 따라 추가하시면 됩니다.
-  // 예를 들어, 사용 기간이나 중단 확인 여부 등을 상태로 관리할 수 있습니다.
+
+  let { dept, contId } = useParams();
+  
   const [periodInfo, setPeriodInfo] = useState(null);
   const [isAssetActive, setIsAssetActive] = useState(false);
 
-  const dept = 'DEPT1';
-  const contId = '3';
+  
 
   useEffect(() => {
     const fetchPeriodInfo = async () => {
@@ -29,6 +30,7 @@ export default function AssetStop() {
                 }
             });
             if (response.data === 'ASSET_IS_EXPIRE' || response.data === 'ASSET_IS_NOT_INUSE') {
+                console.log("response.data");
                 setIsAssetActive(false);
             } else {
                 setPeriodInfo(response.data);
