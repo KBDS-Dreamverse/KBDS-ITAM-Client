@@ -1,8 +1,8 @@
 import * as S from './AssetList.style';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { assetInfos } from '../../../utils/data';
-import SearchFilter from '../../../components/ui/SearchFilter/SearchFilter';
+import { assetInfos } from '../../../../utils/data';
+import SearchFilter from '../../../../components/ui/SearchFilter/SearchFilter';
 
 export default function AssetList() {
   const navigate = useNavigate();

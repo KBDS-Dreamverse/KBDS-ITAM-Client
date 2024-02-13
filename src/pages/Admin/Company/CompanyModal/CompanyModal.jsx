@@ -22,12 +22,38 @@ export default function CompanyModal({ onClose, id, workFor }) {
           <S.Input type='text' id={el.eng}></S.Input>
         </S.Li>
       ));
-      return <S.Ul>{listItems}</S.Ul>;
+      return (
+        <S.Ul>
+          <S.Fieldset>
+            <S.Label htmlFor='계열사 구분'>계열사 구분</S.Label>
+            <S.Label>
+              <S.Input type='radio' name='계열사 구분' value='Y' checked />
+              <S.Span>Y</S.Span>
+            </S.Label>
+            <S.Label>
+              <S.Input type='radio' name='계열사 구분' value='N' />
+              <S.Span>N</S.Span>
+            </S.Label>
+          </S.Fieldset>
+          {listItems}
+        </S.Ul>
+      );
     }
     if (workFor === 'revise') {
       const company = companyInfos[id - 1];
       return (
         <S.Ul>
+          <S.Fieldset>
+            <S.Label htmlFor='계열사 구분'>계열사 구분</S.Label>
+            <S.Label>
+              <S.Input type='radio' name='계열사 구분' value='Y' checked />
+              <S.Span>Y</S.Span>
+            </S.Label>
+            <S.Label>
+              <S.Input type='radio' name='계열사 구분' value='N' />
+              <S.Span>N</S.Span>
+            </S.Label>
+          </S.Fieldset>
           <S.Li>
             <S.Label htmlFor='업체명'>업체명</S.Label>
             <S.Input value={company.unitCompany.name}></S.Input>
@@ -57,7 +83,7 @@ export default function CompanyModal({ onClose, id, workFor }) {
     <Modal title={`업체 정보 ${message}`} onClose={onClose}>
       <ModalContentWrapper>
         {renderModalContent()}
-        <S.AddButton>{`업체 ${message}`}</S.AddButton>
+        <S.ModalButton>{`업체 ${message}`}</S.ModalButton>
       </ModalContentWrapper>
     </Modal>
   );

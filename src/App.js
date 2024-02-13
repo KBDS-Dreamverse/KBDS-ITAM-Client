@@ -6,7 +6,7 @@ import styles from './styles/App.module.css';
 
 import AdminHome from './pages/Admin/Home/AdminHome';
 import CompanyList from './pages/Admin/Company/CompanyList';
-import AssetList from './pages/Admin/Asset/AssetList';
+import AssetList from './pages/Admin/Asset/Home/AssetList';
 
 import ClientHome from './pages/Client/Home/ClientHome';
 import AssetRegister from './pages/Admin/Asset/Register/AssetRegister';

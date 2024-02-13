@@ -1,6 +1,39 @@
 import styled from 'styled-components';
 import Button160 from '../../../../components/atoms/Button160';
 
+export const BoxWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  algin-content: flex-start;
+`;
+export const BoxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  algin-content: flex-start;
+`;
+export const BoxTitle = styled.div`
+  color: #000;
+  font-family: pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 20px 0;
+`;
+export const CheckboxGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  algin-content: center;
+`;
+export const CheckBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  algin-content: center;
+`;
+
 export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
@@ -40,12 +73,14 @@ export const Label = styled.label`
   align-items: center;
 
   color: #000;
-  width: 108px;
   font-family: pretendard;
-  font-size: 17.007px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  padding-right: 10px;
+  width: 80px;
 `;
 export const Input = styled.input`
   display:flex;
@@ -60,6 +95,19 @@ export const Input = styled.input`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`;
+export const UploadButton = styled.button`
+  width: 60px;
+  height: 19px;
+  background-color: #d9d9d9;
+  color: #000;
+  text-align: center;
+  font-family: pretendard;
+  font-size: 10.422px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 8px;
 `;
 
 export const ModalButton = styled(Button160)`
