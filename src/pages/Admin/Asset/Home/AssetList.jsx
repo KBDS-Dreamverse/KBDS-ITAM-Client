@@ -9,7 +9,11 @@ export default function AssetList() {
 
   const renderAssetRows = () => {
     const listItems = assetInfos.map((el) => (
-      <S.Li>
+      <S.Li
+        onDoubleClick={() => {
+          navigate(`/team/${el.id}/update`);
+        }}
+      >
         <S.Name>{el.unitAsset.name}</S.Name>
         <S.Division>{el.unitAsset.division}</S.Division>
         <S.Tag>{el.unitAsset.tag}</S.Tag>

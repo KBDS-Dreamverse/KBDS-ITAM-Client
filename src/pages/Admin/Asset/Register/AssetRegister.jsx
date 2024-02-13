@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './AssetRegister.style';
 import useModal from '../../../../hooks/useModal';
 import AssetModal from '../Modal/AssetModal';
-import CompanyModal from '../../Company/CompanyModal/CompanyModal';
+import CompanyModal from '../../Company/Modal/CompanyModal';
 
 export default function AssetRegister() {
   const [assetValue, setAssetValue] = useState('Y');

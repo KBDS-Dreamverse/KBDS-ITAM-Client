@@ -5,8 +5,9 @@ import Footer from './components/layouts/Footer/Footer';
 import styles from './styles/App.module.css';
 
 import AdminHome from './pages/Admin/Home/AdminHome';
-import CompanyList from './pages/Admin/Company/CompanyList';
+import CompanyList from './pages/Admin/Company/Home/CompanyList';
 import AssetList from './pages/Admin/Asset/Home/AssetList';
+import AssetDetail from './pages/Admin/Asset/Detail/AssetDetail';
 
 import ClientHome from './pages/Client/Home/ClientHome';
 import AssetRegister from './pages/Admin/Asset/Register/AssetRegister';
@@ -32,6 +33,7 @@ function ContentBox() {
         <Route path='/admin/company' element={<CompanyList />} />
         <Route path='/admin/asset' element={<AssetList />} />
         <Route path='/admin/asset/register' element={<AssetRegister />} />
+        <Route path='/admin/asset/:id/detail' element={<AssetDetail />} />
 
         <Route path='/client/home' element={<ClientHome />} />
       </Routes>
