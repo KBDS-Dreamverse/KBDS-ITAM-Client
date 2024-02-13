@@ -6,8 +6,8 @@ export default function ClientAssetSidebar({ setSideToggle, setUserMode }) {
 
   return (
     <S.SideWrapper onClick={() => setSideToggle(false)}>
-      <S.Company>KB국민은행</S.Company>
-      <S.Company>글로벌 플랫폼부</S.Company>
+      <S.Company>{sessionStorage.getItem("userCorp")}</S.Company>
+      <S.Company>{sessionStorage.getItem("userDept")}</S.Company>
       <S.Menu>안내</S.Menu>
       <S.Menu>요청하기</S.Menu>
       <S.Menu>사용하기</S.Menu>

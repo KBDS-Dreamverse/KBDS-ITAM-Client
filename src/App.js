@@ -12,7 +12,7 @@ import CompanyList from './pages/Company/CompanyList';
 import Login from "./pages/Client/Login";
 import AssetRequest from './pages/LifeCycle/AssetRequest';
 import DepartmentAssetList from './pages/Client/DepartmentAssetList';
-
+import AssetInfo from './pages/LifeCycle/AssetInfo';
 
 function App() {
 
@@ -39,6 +39,7 @@ function ContentBox() {
         <Route path="/login" element={<Login/>}/>
         <Route path='/client/asset/request' element={<AssetRequest/>}/>
         <Route path='/client/:deptId/list' element={<DepartmentAssetList/>}/>
+        <Route path='/client/asset/info' element={<AssetInfo/>}/>
       </Routes>
     </div>
   );

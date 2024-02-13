@@ -2,13 +2,16 @@ import React from 'react';
 import * as S from './Navbar.style';
 import { useState } from 'react';
 import AdminSidebar from './AdminSidebar';
-import ClientSidebar from './ClientAssetSidebar';
+import ClientSidebar from './ClientSidebar';
 import ClientAssetSidebar from './ClientAssetSidebar';
 import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
-  const [userMode, setUserMode] = useState('admin');
+  const [userMode, setUserMode] = useState('client');
+
+  const location = useLocation();
+  const path = location.pathname;
 
   const renderMenuToggle = () => {
 
@@ -20,6 +23,13 @@ export default function Navbar() {
       );
     }
     if (userMode === 'client') {
+      if(path.startsWith('/client/asset')){
+        return(<ClientAssetSidebar
+          setSideToggle={setMenuToggle}
+          setUserMode={setUserMode}
+        />)
+        
+      }
       return (
         <ClientSidebar
           setSideToggle={setMenuToggle}

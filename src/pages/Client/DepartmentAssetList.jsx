@@ -8,6 +8,8 @@ import { API } from '../../config';
 export default function DepartmentAssetList (){
     const { deptId } = useParams();
     const [assetList, setAssetList] = useState([]);
+    console.log('deptId:', deptId);
+
   
     useEffect(() => {
       // 부서별 자산 목록을 가져오는 API 호출
@@ -26,7 +28,7 @@ export default function DepartmentAssetList (){
 
     return(
         <S.Wrapper>
-        deptId
+        deptId : {deptId}
       </S.Wrapper>
     );
 
