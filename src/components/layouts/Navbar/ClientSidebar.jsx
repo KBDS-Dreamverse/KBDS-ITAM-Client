@@ -1,20 +1,47 @@
 import * as S from './ClientSidebar.style';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { API } from "../../../config";
+import { useEffect, useState } from 'react';
 
 export default function ClientSidebar({ setSideToggle, setUserMode }) {
   const navigate = useNavigate();
+  const [corpName, setCorpName] = useState(sessionStorage.getItem("userCorp"));
+  const [selectedDepts, setSelectedDepts] = useState([]);
+
+  const handleCorpChange = (e)=>{
+    const newCorpName = e.target.value;
+    setCorpName(newCorpName);
+  }
+
+  useEffect(()=> {
+    axios.get(`${API.DEPT_INFO}`,{
+      params :{
+        corpName : corpName,
+      },
+    })
+    .then((resopnse) => {
+      setSelectedDepts(resopnse.data);
+    })
+    .catch((error) =>{
+      console.error("조회 에러 : ",error);
+    });
+  },[]);
+
+  const handleDeptClick = (deptId, event) => {
+    event.stopPropagation();
+    console.log("deptId : ",deptId);
+    navigate(`/client/${deptId}/list`);
+  };
+
 
   return (
     <S.SideWrapper onClick={() => setSideToggle(false)}>
-      <S.Company>KB국민은행</S.Company>
-      <S.Company>글로벌 플랫폼부</S.Company>
-      <S.Menu>수신상품부</S.Menu>
-      <S.Menu>고객만족부</S.Menu>
-      <S.Menu>사용하기</S.Menu>
-      <S.SubMenu>- 설치 가이드</S.SubMenu>
-      <S.SubMenu>- 사용 가이드</S.SubMenu>
-      <S.Menu>대시보드</S.Menu>
-      <S.Menu>폐기</S.Menu>
+      <S.Company>{sessionStorage.getItem("userCorp")}</S.Company>
+      <S.Company>{sessionStorage.getItem("userDept")}</S.Company>
+      {selectedDepts.map((dept)=>(
+        <S.Menu key={dept.deptId} onClick={(event) => handleDeptClick(dept.deptId, event)}>{dept.deptName}</S.Menu>
+      ))}
       <S.ButtonWrapper>
         <S.BackButton>
           <S.BackIcon src='/assets/icon_back.svg' alt='back'></S.BackIcon>
