@@ -166,7 +166,7 @@ export default function AssetModal({ onClose, id, workFor }) {
           {versionList.map((item) => {
             return (
               <S.Li>
-                <S.Label htmlFor={item.name}>{item.name}</S.Label>
+                <S.VLabel htmlFor={item.name}>{item.name}</S.VLabel>
                 <S.Input
                   type='text'
                   id={item.name}

@@ -80,6 +80,8 @@ export const Label = styled.label`
   line-height: normal;
 
   padding-right: 10px;
+`;
+export const VLabel = styled(Label)`
   width: 80px;
 `;
 export const Input = styled.input`
