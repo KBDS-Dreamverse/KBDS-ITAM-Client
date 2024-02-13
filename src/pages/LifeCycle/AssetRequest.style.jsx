@@ -205,3 +205,7 @@ margin-left: 10px;
 margin-right: 10px;
 
 `;
+export const DATE = styled.div`
+display:flex;
+flex-direction: column;
+`

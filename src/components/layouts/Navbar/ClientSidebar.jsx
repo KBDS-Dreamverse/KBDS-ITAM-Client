@@ -28,19 +28,18 @@ export default function ClientSidebar({ setSideToggle, setUserMode }) {
     });
   },[]);
 
-  const handleDeptClick = (deptId, event) => {
-    event.stopPropagation();
+  const handleDeptClick = (deptId) => {
     console.log("deptId : ",deptId);
-    navigate(`/client/${deptId}/list`);
+    navigate(`/client/home`);
   };
 
 
   return (
-    <S.SideWrapper onClick={() => setSideToggle(false)}>
+    <S.SideWrapper>
       <S.Company>{sessionStorage.getItem("userCorp")}</S.Company>
       <S.Company>{sessionStorage.getItem("userDept")}</S.Company>
       {selectedDepts.map((dept)=>(
-        <S.Menu key={dept.deptId} onClick={(event) => handleDeptClick(dept.deptId, event)}>{dept.deptName}</S.Menu>
+        <S.Menu key={dept.deptId} to={`/client/${dept.deptId}/list`}>{dept.deptName}</S.Menu>
       ))}
       <S.ButtonWrapper>
         <S.BackButton>
