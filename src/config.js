@@ -6,7 +6,13 @@ export const API = {
     LOGIN: `${BASE_URL}/login`,
     USER_INFO: `${BASE_URL}/userInfo`,
     DEPT_INFO: `${BASE_URL}/dept`,
+
+    EXPIRE: `${BASE_URL}/{dept}/{contId}/expire`,
+    STOP: `${BASE_URL}/{dept}/{contId}/stop`,
+    DASHBOARD: `${BASE_URL}/{dept}/{contId}/dashboard`
+
     DEPT_ASSET: `${BASE_URL}/dept/asset`
+
 
     //CLIENT API
 

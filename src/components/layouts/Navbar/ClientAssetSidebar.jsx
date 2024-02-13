@@ -1,8 +1,10 @@
 import * as S from './ClientSidebar.style';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function ClientAssetSidebar({ setSideToggle, setUserMode,deptId,contId}) {
   const navigate = useNavigate();
+
 
   console.log(deptId);
   console.log(contId);
@@ -17,6 +19,7 @@ export default function ClientAssetSidebar({ setSideToggle, setUserMode,deptId,c
       <S.SubMenu to={`/client/asset/${deptId}/${contId}/info`} >- 사용 가이드</S.SubMenu>
       <S.Menu to={`/client/asset/${deptId}/${contId}/dashboard`} >대시보드</S.Menu>
       <S.Menu to={`/client/asset/${deptId}/${contId}/info`} >폐기</S.Menu>
+
       <S.ButtonWrapper>
         <S.BackButton>
           <S.BackIcon src='/assets/icon_back.svg' alt='back'></S.BackIcon>
