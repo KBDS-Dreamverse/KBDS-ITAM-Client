@@ -15,3 +15,28 @@ export default COMPANY_INFO;
 // siteUrl: '홈페이지',
 // head: '대표자',
 // note: '비고',
+
+export const tagList = [
+  { name: '은행' },
+  { name: '보험' },
+  { name: '투자' },
+  { name: '캐피탈' },
+  { name: '부동산' },
+];
+export const categoryPackageSWList = [
+  { name: '시스템인프라SW' },
+  { name: '응용SW' },
+];
+export const categoryCloudServiceList = [
+  { name: 'SaaS' },
+  { name: 'PaaS' },
+  { name: 'IaaS' },
+  { name: 'Cloud Audit & Consulting' },
+  { name: 'CSB' },
+];
+export const versionList = [
+  { name: '버전' },
+  { name: '사용 가이드' },
+  { name: '설치 가이드' },
+  { name: '설치 파일' },
+];
