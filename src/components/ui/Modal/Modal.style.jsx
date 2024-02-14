@@ -59,6 +59,6 @@ export const ModalContent = styled.div`
 export const ModalContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${(props) => (props.alignItems ? props.alignItems : 'center')};
   justify-content: center;
 `;

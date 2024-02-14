@@ -6,7 +6,7 @@ export const SideWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-content: center;
+  align-items: center;
 
   position: fixed;
   top: 64px;
@@ -76,6 +76,13 @@ export const SubMenu = styled(MenuBox)`
   padding: 0px;
   padding-left: 8px;
   font-size: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    cursor: pointer;
+  }
 `;
 
 export const ButtonWrapper = styled.div`

@@ -15,3 +15,40 @@ export default COMPANY_INFO;
 // siteUrl: '홈페이지',
 // head: '대표자',
 // note: '비고',
+export const assetInfoLeftList = [
+  { name: '자산ID', value: 'name' },
+  { name: '자산 구분', value: 'division' },
+  { name: 'SW 카테고리', value: 'category' },
+  { name: '가격', value: 'cost' },
+  { name: '담당자', value: 'manager' },
+];
+export const assetInfoRightList = [
+  { name: '등록일', value: 'date' },
+  { name: '자산 태그', value: 'tag' },
+  { name: '제공업체', value: 'provider' },
+  { name: '버전', value: 'version' },
+];
+export const tagList = [
+  { name: '은행' },
+  { name: '보험' },
+  { name: '투자' },
+  { name: '캐피탈' },
+  { name: '부동산' },
+];
+export const categoryPackageSWList = [
+  { name: '시스템인프라SW' },
+  { name: '응용SW' },
+];
+export const categoryCloudServiceList = [
+  { name: 'SaaS' },
+  { name: 'PaaS' },
+  { name: 'IaaS' },
+  { name: 'Cloud Audit & Consulting' },
+  { name: 'CSB' },
+];
+export const versionList = [
+  { name: '버전' },
+  { name: '사용 가이드' },
+  { name: '설치 가이드' },
+  { name: '설치 파일' },
+];

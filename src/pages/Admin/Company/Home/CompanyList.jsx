@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import * as S from './CompanyList.style';
-import UnitCompanyRow from '../../components/ui/UnitCompanyRow/UnitCompanyRow';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
-import useModal from '../../hooks/useModal';
-import CompanyModal from './CompanyModal/CompanyModal';
-import companyInfos from '../../utils/data';
+import useModal from '../../../../hooks/useModal';
+import CompanyModal from '../Modal/CompanyModal';
+import { companyInfos } from '../../../../utils/data';
 
 export default function CompanyList() {
-  const navigate = useNavigate();
-
   const [workFor, setWorkFor] = useState();
   const [companyID, setCompanyID] = useState();
   const { isOpen, openModal, closeModal } = useModal();
