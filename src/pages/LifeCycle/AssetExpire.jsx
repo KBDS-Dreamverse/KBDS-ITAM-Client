@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 import * as S from './AssetExpire.style'; // 이 부분은 실제 스타일 파일에 맞게 변경해야 합니다.
 import axios from "axios";
 import { API } from "../../config";
+import ClientAssetSidebar from "../../components/layouts/Navbar/ClientAssetSidebar";
 
 export default function AssetStop() {
 
-  let { dept, contId } = useParams();
+  let { deptId, contId } = useParams();
   
   const [periodInfo, setPeriodInfo] = useState(null);
   const [isAssetActive, setIsAssetActive] = useState(false);
@@ -23,7 +24,7 @@ export default function AssetStop() {
                 return;
             }
 
-            const response = await axios.get(API.EXPIRE.replace('{dept}', dept).replace('{contId}', contId), {
+            const response = await axios.get(API.EXPIRE.replace('{dept}', deptId).replace('{contId}', contId), {
                 headers: {
                     // HTTP 요청 헤더에 userId를 추가합니다.
                     'userId': userId
@@ -42,7 +43,7 @@ export default function AssetStop() {
     };
 
     fetchPeriodInfo();
-  }, [dept, contId]);
+  }, [deptId, contId]);
 
   const handleStopClick = async () => {
     try {
@@ -52,7 +53,7 @@ export default function AssetStop() {
         return;
       }
 
-      const response = await axios.patch(API.STOP.replace('{dept}', dept).replace('{contId}', contId), {}, {
+      const response = await axios.patch(API.STOP.replace('{dept}', deptId).replace('{contId}', contId), {}, {
         headers: {
           'userId': userId
         }
@@ -72,6 +73,8 @@ export default function AssetStop() {
 
   return (
     <>
+        <ClientAssetSidebar deptId={deptId} contId={contId}/>
+
         <S.Wrapper>
             <S.Main>
                 <S.Header>

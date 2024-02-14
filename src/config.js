@@ -9,9 +9,12 @@ export const API = {
 
     EXPIRE: `${BASE_URL}/{dept}/{contId}/expire`,
     STOP: `${BASE_URL}/{dept}/{contId}/stop`,
-    DASHBOARD: `${BASE_URL}/{dept}/{contId}/dashboard`
+    DASHBOARD: `${BASE_URL}/{dept}/{contId}/dashboard`,
 
-    DEPT_ASSET: `${BASE_URL}/dept/asset`
+    DEPT_ASSET: `${BASE_URL}/dept/asset`,
+    INSTALLGUIDE: `${BASE_URL}/{dept}/{contId}/installguide`,
+    USEAGEGUIDE: `${BASE_URL}/{dept}/{contId}/usageguide`
+
 
 
     //CLIENT API

@@ -5,10 +5,11 @@ import * as S from './AssetDashBoard.style'; // 이 부분은 실제 스타일 �
 import axios from "axios";
 import { API } from "../../config";
 import PieChart from './PieChart'; // CorePieChart 컴포넌트를 올바른 경로에서 임포트
+import ClientAssetSidebar from "../../components/layouts/Navbar/ClientAssetSidebar";
 
 export default function AssetDashBoard() {
 
-  let { dept, contId } = useParams();
+  let { deptId, contId } = useParams();
   
   const [dashboardInfo, setDashboardInfo] = useState(null);
 
@@ -25,10 +26,10 @@ export default function AssetDashBoard() {
                 return;
             }
 
-            const response = await axios.get(API.DASHBOARD.replace('{dept}', dept).replace('{contId}', contId), {
+            const response = await axios.get(API.DASHBOARD.replace('{dept}', deptId).replace('{contId}', contId), {
                 headers: {
                     // HTTP 요청 헤더에 userId를 추가합니다.
-                    'userId': "L2_0"
+                    'userId': userId
                 }
             });
             setDashboardInfo(response.data);
@@ -40,7 +41,7 @@ export default function AssetDashBoard() {
     };
 
     fetchDashboardInfo();
-  }, [dept, contId]);   // 경로 상의 dept, contId 값이 변경될 때마다 fetchDashboardInfo 함수를 다시 호출
+  }, [deptId, contId]);   // 경로 상의 dept, contId 값이 변경될 때마다 fetchDashboardInfo 함수를 다시 호출
 
   const getLicenseComponent = (licName, licValues) => {
     switch (licName) {
@@ -73,7 +74,7 @@ export default function AssetDashBoard() {
           <S.LicValContainer>
              <div>[{licName}]</div>
              <S.ChartContainer>
-             <PieChart curr={licValues.currUsers} max={licValues.maxUsersLimit} />
+             <PieChart curr={licValues.currUsers} max={licValues.maxUsersLimit} licName={licName}/>
              </S.ChartContainer>
 
              <div>최대 사용자 수 : {licValues.maxUsersLimit}</div>
@@ -95,7 +96,7 @@ export default function AssetDashBoard() {
           <S.LicValContainer>
             <div>[{licName}]</div>
             <S.ChartContainer>
-                <PieChart curr={licValues.currCore} max={licValues.maxCoreLimit} />
+                <PieChart curr={licValues.currCore} max={licValues.maxCoreLimit} licName={licName} />
             </S.ChartContainer>
             
              <div>최대 코어 수 : {licValues.maxCoreLimit}</div>
@@ -124,6 +125,8 @@ export default function AssetDashBoard() {
 
   return (
     <>
+        <ClientAssetSidebar deptId={deptId} contId={contId}/>
+
         <S.Wrapper>
             <S.Main>
                 <S.Header>
