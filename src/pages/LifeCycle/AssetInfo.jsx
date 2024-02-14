@@ -52,20 +52,37 @@ export default function AssetInfo(){
                             {assetData.corpName} | {assetData.requestStatus}
                         </S.SubDescription>
                         <S.SpdDescription>
-                            {assetData.astSpd}
+                            <S.AssetInfoImg src = {assetData.astImgUrl}>
+                                </S.AssetInfoImg> {assetData.astSpd}
                         </S.SpdDescription>
                         <S.VersionDes style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div>recently version : {assetData.astVer}</div>
-                            <div> 이전버전 보러가기</div>
+                            {/* <div> 이전버전 보러가기</div> */}
                         </S.VersionDes>
+                        <S.Table>
+                            <tbody>
+                                {assetData.mnLogVersList.map((item, index) => (
+                                <S.TableRow key={index}>
+                                    <td>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '150%' }}>
+                                        <div style={{paddingLeft: '10px'}}>{item}</div>
+                                        <div style={{ fontWeight: 300 }}>버전 업데이트 사항</div>
+                                    </div>
+                                    </td>
+                                </S.TableRow>
+                                ))}
+                            </tbody>
+                        </S.Table>
                         <S.SpdDescription> 
                             제품 상세
+                            <hr style={{ margin: '10px 0', border: '1px solid #ccc' }} />
                         </S.SpdDescription>
-                        <S.SpdDescription>
+                        <S.Description>
                             {assetData.astDpd}
-                        </S.SpdDescription>
+                        </S.Description>
                     </div>
                 )}
+                <S.toButton style={{float: 'right'}}>요청하기</S.toButton>
             </S.Main>
         </S.Wrapper>        
     )

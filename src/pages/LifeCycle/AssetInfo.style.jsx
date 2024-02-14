@@ -107,16 +107,27 @@ float: right;
 `
 
 export const Table = styled.table`
-    width: 100%;
-    border-collapse: collapse;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    margin-left : 100px;
+    margin-top: 30px;
+    flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
+    font-size: 20px; // 적당한 글자 크기로 조정하세요.
+    text-align: left;
+    line-height: 1.5
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #b0b0b0; 
+    border-bottom: 1px solid #b0b0b0;
+    width: 80%
+`;
+export const tbody = styled.tr`
+  border-bottom: 1px solid #b0b0b0;
 `;
 
 export const TableRow = styled.tr`
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #b0b0b0;
+    line-height: 1.5
     
 `;
 
@@ -190,26 +201,36 @@ export const SubDescription = styled.p`
     flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
     font-size: 19px; // 적당한 글자 크기로 조정하세요.
     text-align: left;
-    width: 70%
+    width: 80%
     
 `; 
 
+export const Description = styled.p`
+    margin-left : 100px;
+    margin-top: 30px;
+    flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
+    font-size: 25px; // 적당한 글자 크기로 조정하세요.
+    text-align: left;
+    line-height: 1.5;
+    width: 80%
+`;
 export const SpdDescription = styled.p`
     margin-left : 100px;
     margin-top: 30px;
     flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
-    font-size: 32px; // 적당한 글자 크기로 조정하세요.
+    font-size: 28px; // 적당한 글자 크기로 조정하세요.
     text-align: left;
-    width: 70%
+    line-height: 1.3;
+    width: 80%
 `;
-
 export const VersionDes = styled.p`
     margin-left : 100px;
     margin-top: 30px;
     flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
     font-size: 20px; // 적당한 글자 크기로 조정하세요.
     text-align: left;
-    width: 70%   
+    line-height: 1.5
+    width: 80%   
 `;
 
 export const pastVer = styled.p`
@@ -217,3 +238,26 @@ export const pastVer = styled.p`
     margin-left : 100px;
     font-size: 20px; // 적당한 글자 크기로 조정하세요.
 `;
+
+export const toButton =styled.p`
+    width: 100px;
+    height: 40px;
+    border-radius: 5.79px;
+    background: #B0C4DE;
+    color: #000;
+    margin : 15px;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  `;
+
+  export const AssetInfoImg = styled.img`
+  width : auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit : cover;
+  `; 
