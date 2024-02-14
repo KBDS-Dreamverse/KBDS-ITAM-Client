@@ -14,11 +14,11 @@ export default function ClientAssetSidebar({ setSideToggle, setUserMode,deptId,c
       <S.Company>{deptId}</S.Company>
       <S.Menu to={`/client/asset/${deptId}/${contId}/info`}>안내</S.Menu>
       <S.Menu to={`/client/asset/${deptId}/${contId}/request`} >요청하기</S.Menu>
-      <S.Menu to={`/client/asset/${deptId}/${contId}/info`} >사용하기</S.Menu>
-      <S.SubMenu to={`/client/asset/${deptId}/${contId}/info`} >- 설치 가이드</S.SubMenu>
-      <S.SubMenu to={`/client/asset/${deptId}/${contId}/info`} >- 사용 가이드</S.SubMenu>
+      <S.Menu to={`/client/asset/${deptId}/${contId}/installguide`} >사용하기</S.Menu>
+      <S.SubMenu to={`/client/asset/${deptId}/${contId}/installguide`} >- 설치 가이드</S.SubMenu>
+      <S.SubMenu to={`/client/asset/${deptId}/${contId}/usageguide`} >- 사용 가이드</S.SubMenu>
       <S.Menu to={`/client/asset/${deptId}/${contId}/dashboard`} >대시보드</S.Menu>
-      <S.Menu to={`/client/asset/${deptId}/${contId}/info`} >폐기</S.Menu>
+      <S.Menu to={`/client/asset/${deptId}/${contId}/expire`} >폐기</S.Menu>
 
       <S.ButtonWrapper>
         <S.BackButton>
