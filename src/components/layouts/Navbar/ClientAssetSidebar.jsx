@@ -1,15 +1,15 @@
 import * as S from './ClientSidebar.style';
 import { useNavigate } from 'react-router-dom';
 
-export default function ClientSidebar({ setSideToggle, setUserMode }) {
+export default function ClientAssetSidebar({ setSideToggle, setUserMode }) {
   const navigate = useNavigate();
 
   return (
     <S.SideWrapper onClick={() => setSideToggle(false)}>
       <S.Company>KB국민은행</S.Company>
       <S.Company>글로벌 플랫폼부</S.Company>
-      <S.Menu>수신상품부</S.Menu>
-      <S.Menu>고객만족부</S.Menu>
+      <S.Menu>안내</S.Menu>
+      <S.Menu>요청하기</S.Menu>
       <S.Menu>사용하기</S.Menu>
       <S.SubMenu>- 설치 가이드</S.SubMenu>
       <S.SubMenu>- 사용 가이드</S.SubMenu>
