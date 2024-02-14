@@ -144,17 +144,33 @@ export default function AssetRequest() {
                                 <S.TableRow>
                                     <S.TableHeader>담당자</S.TableHeader>
                                     <S.TableCell>
-                                        {adminList.map((item, index) => (
-                                            <S.TableCellInput key={index}>
+
+                                         <S.TableCellInput>
                                                 <S.InputCheck
                                                     type="checkbox"
                                                     name="admin"
                                                     value="예"
-                                                >
-                                                    {item.userName}
-                                                </S.InputCheck>
+                                                ></S.InputCheck> 
+                                                조익현 / KB국민은행 / IT테크그룹 / 수석(L3)
                                             </S.TableCellInput>
-                                        ))}
+
+                                            <S.TableCellInput>
+                                                <S.InputCheck
+                                                    type="checkbox"
+                                                    name="admin"
+                                                    value="예"
+                                                ></S.InputCheck> 
+                                                이미정 / KB국민은행 / IT테크그룹 / 팀장(L4)
+                                            </S.TableCellInput>
+
+                                            <S.TableCellInput>
+                                                <S.InputCheck
+                                                    type="checkbox"
+                                                    name="admin"
+                                                    value="예"
+                                                ></S.InputCheck> 
+                                                채희선 / KB국민은행 / 글로벌플랫폼부 / 차장(L2)
+                                            </S.TableCellInput>
                                     </S.TableCell>
                                 </S.TableRow>
                             </tbody>
