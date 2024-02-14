@@ -35,6 +35,7 @@ function ContentBox() {
     <div className={styles.container}>
       <Routes>
         <Route path='/' element={<AdminHome />} />
+        <Route path='/admin' element={<AdminHome />} />
         <Route path='/admin/home' element={<AdminHome />} />
 
         <Route path='/admin/company' element={<CompanyList />} />

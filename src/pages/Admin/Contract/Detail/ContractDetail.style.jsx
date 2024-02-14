@@ -96,7 +96,7 @@ export const Li = styled.li`
   padding: 4px;
 `;
 export const HistoryContainer = styled.div`
-  height: 200px;
+  height: 360px;
   overflow: scroll;
 `;
 export const HistoryLi = styled.li`
@@ -184,4 +184,14 @@ export const Button = styled(Button80)`
   border-radius: 4px;
   background-color: #fab809;
   color: white;
+`;
+
+export const Span = styled.span`
+  color: #000;
+  font-family: pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 2px;
 `;

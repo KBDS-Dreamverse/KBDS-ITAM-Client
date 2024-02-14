@@ -68,11 +68,11 @@ export default function AssetDetail() {
     return (
       <>
         <S.Li>
-          <S.Label htmlFor='assetName'>이름</S.Label>
+          <S.Label htmlFor='assetName'>자산ID</S.Label>
           <S.DefaultInput
             type='text'
-            id='assetName'
-            value={asset[0].unitAsset.name}
+            id='assetID'
+            value={asset[0].id}
             onChange={(e) => {
               setText(e.target.value);
             }}

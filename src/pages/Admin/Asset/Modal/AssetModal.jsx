@@ -159,20 +159,20 @@ function VersionModal({ setText, setVersionDetail }) {
   const data = React.useMemo(
     () => [
       {
-        version: 'v1.0',
-        useGuide: '파일형태',
-        installGuide: '파일형태',
-        installFile: '파일형태',
+        version: '',
+        useGuide: '',
+        installGuide: '',
+        installFile: '',
       },
       {
-        version: 'v1.1',
-        useGuide: '파일형태',
-        installGuide: '파일형태',
-        installFile: '파일형태',
+        version: '',
+        useGuide: '',
+        installGuide: '',
+        installFile: '',
       },
       {
-        version: 'v2.0',
-        useGuide: '파일형태',
+        version: '',
+        useGuide: '',
         installGuide: '',
         installFile: '',
       },

@@ -28,6 +28,6 @@ export const Th = styled.div`
   width: 100px;
 `;
 export const Td = styled.div`
-  padding: 1px;
+  padding: 5px 0px;
   width: 100px;
 `;

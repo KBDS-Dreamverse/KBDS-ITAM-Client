@@ -83,7 +83,7 @@ export default function CompanyModal({ onClose, id, workFor }) {
     <Modal title={`업체 정보 ${message}`} onClose={onClose}>
       <ModalContentWrapper>
         {renderModalContent()}
-        <S.ModalButton>{`업체 ${message}`}</S.ModalButton>
+        <S.ModalButton onClick={onClose}>{`업체 ${message}`}</S.ModalButton>
       </ModalContentWrapper>
     </Modal>
   );

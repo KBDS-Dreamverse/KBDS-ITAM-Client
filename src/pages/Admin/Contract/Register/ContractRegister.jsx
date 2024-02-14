@@ -14,7 +14,7 @@ import Box from './Box/Box';
 
 export default function ContractRegister() {
   const [assetValue, setAssetValue] = useState('Y');
-  const [contractID, setContractID] = useState('C000001');
+  const [contractID, setContractID] = useState('C000002');
   const [workFor, setWorkFor] = useState('');
   const [assetID, setAssetID] = useState();
   const [checkedSupplyList, setCheckedSupplyList] = useState([]);

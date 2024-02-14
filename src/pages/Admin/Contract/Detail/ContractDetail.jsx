@@ -125,6 +125,46 @@ export default function ContractDetail() {
             })}
           </S.ColumnWrapper>
         </S.RowWrapper>
+
+        <S.Li>
+          <S.Label htmlFor='supplyLicense'>라이선스 공급형태</S.Label>
+          <S.DefaultInput
+            type='text'
+            id='supplyLicense'
+            value={contract[0].unitContract.supplyLicense}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+            disabled={disabled}
+          />
+          <S.Span>{contract[0].unitContract.supplyLicenseDetail}</S.Span>
+        </S.Li>
+        <S.Li>
+          <S.Label htmlFor='periodLicense'>라이선스 기간</S.Label>
+          <S.DefaultInput
+            type='text'
+            id='periodLicense'
+            value={contract[0].unitContract.periodLicense}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+            disabled={disabled}
+          />
+          <S.Span>{contract[0].unitContract.periodLicenseDetail}</S.Span>
+        </S.Li>
+        <S.Li>
+          <S.Label htmlFor='userLicense'>라이선스 사용자수</S.Label>
+          <S.DefaultInput
+            type='text'
+            id='userLicense'
+            value={contract[0].unitContract.userLicense}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+            disabled={disabled}
+          />
+          <S.Span>{contract[0].unitContract.userLicenseDetail}</S.Span>
+        </S.Li>
       </>
     );
   };

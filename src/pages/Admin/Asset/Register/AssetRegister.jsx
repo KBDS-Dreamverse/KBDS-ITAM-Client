@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export default function AssetRegister() {
   const [assetValue, setAssetValue] = useState('Y');
   const [workFor, setWorkFor] = useState('');
-  const [assetID, setAssetID] = useState('A000001');
+  const [assetID, setAssetID] = useState('A000079');
   const { isOpen, openModal, closeModal } = useModal();
   const navigate = useNavigate();
 
@@ -50,7 +50,7 @@ export default function AssetRegister() {
               onClick={() => {
                 openModal();
                 setWorkFor('tag');
-                setAssetID('A000001');
+                setAssetID('A000079');
               }}
             >
               선택
@@ -65,7 +65,7 @@ export default function AssetRegister() {
               onClick={() => {
                 openModal();
                 setWorkFor('category');
-                setAssetID('A000001');
+                setAssetID('A000079');
               }}
             >
               선택
@@ -82,12 +82,12 @@ export default function AssetRegister() {
         <S.Li>
           <S.Label htmlFor='version'>버전</S.Label>
           <S.InputContainer>
-            <div>5</div>
+            <div></div>
             <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('version');
-                setAssetID('A000001');
+                setAssetID('A000079');
               }}
             >
               버전 입력

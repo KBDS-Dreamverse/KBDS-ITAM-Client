@@ -8,21 +8,23 @@ export default function ContractList() {
   const navigate = useNavigate();
 
   const renderContractRows = () => {
-    const listItems = contractInfos.map((el) => (
-      <S.Li
-        onDoubleClick={() => {
-          navigate(`/admin/contract/${el.id}/detail`);
-        }}
-      >
-        <S.Name>{el.unitContract.name}</S.Name>
-        <S.AssetName>{el.unitContract.assetName}</S.AssetName>
-        <S.Company>{el.unitContract.company}</S.Company>
-        <S.Manager>{el.unitContract.manager}</S.Manager>
-        <S.Cost>{el.unitContract.cost}</S.Cost>
-        <S.StartDate>{el.unitContract.startDate}</S.StartDate>
-        <S.EndDate>{el.unitContract.endDate}</S.EndDate>
-      </S.Li>
-    ));
+    const listItems = contractInfos.map((el) =>
+      el.id === 'C000002' ? null : (
+        <S.Li
+          onDoubleClick={() => {
+            navigate(`/admin/contract/${el.id}/detail`);
+          }}
+        >
+          <S.Name>{el.unitContract.name}</S.Name>
+          <S.AssetName>{el.unitContract.assetName}</S.AssetName>
+          <S.Company>{el.unitContract.company}</S.Company>
+          <S.Manager>{el.unitContract.manager}</S.Manager>
+          <S.Cost>{el.unitContract.cost}</S.Cost>
+          <S.StartDate>{el.unitContract.startDate}</S.StartDate>
+          <S.EndDate>{el.unitContract.endDate}</S.EndDate>
+        </S.Li>
+      ),
+    );
     return <S.Ul>{listItems}</S.Ul>;
   };
 
