@@ -15,16 +15,18 @@ export default COMPANY_INFO;
 // siteUrl: '홈페이지',
 // head: '대표자',
 // note: '비고',
-export const assetInfoList = [
+export const assetInfoLeftList = [
   { name: '자산ID', value: 'name' },
+  { name: '자산 구분', value: 'division' },
+  { name: 'SW 카테고리', value: 'category' },
+  { name: '가격', value: 'cost' },
+  { name: '담당자', value: 'manager' },
+];
+export const assetInfoRightList = [
   { name: '등록일', value: 'date' },
-  { name: '자산 구분' },
-  { name: '자산 태그' },
-  { name: 'SW 카테고리' },
-  { name: '제공업체' },
-  { name: '가격' },
-  { name: '버전' },
-  { name: '담당자' },
+  { name: '자산 태그', value: 'tag' },
+  { name: '제공업체', value: 'provider' },
+  { name: '버전', value: 'version' },
 ];
 export const tagList = [
   { name: '은행' },

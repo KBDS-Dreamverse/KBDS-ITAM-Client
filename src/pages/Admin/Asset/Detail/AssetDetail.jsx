@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as S from './AssetDetail.style';
 import { assetInfos, assetHistoryInfos } from '../../../../utils/data';
-import { assetInfoList } from '../../../../constants';
+import { assetInfoLeftList, assetInfoRightList } from '../../../../constants';
 
 export default function AssetDetail() {
   const { id } = useParams();
@@ -15,15 +15,10 @@ export default function AssetDetail() {
     return (
       <S.Li>
         <S.Label htmlFor='assetFile'>첨부파일</S.Label>
-        <S.Input
-          type='button'
-          id='assetFile'
-          placeholder='파일을 찾아 첨부 파일로 추가하세요.'
-          onChange={(e) => {
-            setText(e.target.value);
-          }}
-          disabled={disabled}
-        />
+        <S.FileDiv>파일을 찾아 첨부 파일로 추가하세요.</S.FileDiv>
+        <S.PButtonWrapper>
+          <S.PlusButton>검색</S.PlusButton>
+        </S.PButtonWrapper>
       </S.Li>
     );
   };
@@ -32,30 +27,35 @@ export default function AssetDetail() {
       <>
         <S.Li>
           <S.Label htmlFor='assetMemo'>메모</S.Label>
-          <S.Input
+          <S.MemoInput
             type='text'
             id='assetMemo'
-            placeholder='메모를 입력해 주세묘.'
+            placeholder='메모를 입력해 주세요.'
             onChange={(e) => {
               setText(e.target.value);
             }}
             disabled={disabled}
           />
         </S.Li>
-        {assetHistoryInfos.map((item) => {
-          return (
-            <S.HistoryLi>
-              <S.HistoryManIcon />
-              <S.HistoryTextContainer>
-                <S.HistoryManager>{item.unitHistory.manager}</S.HistoryManager>
-                <S.HistoryH6>
-                  {item.unitHistory.activity} {item.unitHistory.date}
-                </S.HistoryH6>
-                <S.HistoryH6>{item.unitHistory.descrip}</S.HistoryH6>
-              </S.HistoryTextContainer>
-            </S.HistoryLi>
-          );
-        })}
+        <S.Label>활동</S.Label>
+        <S.HistoryContainer>
+          {assetHistoryInfos.map((item) => {
+            return (
+              <S.HistoryLi>
+                <S.HistoryManIcon />
+                <S.HistoryTextContainer>
+                  <S.HistoryManager>
+                    {item.unitHistory.manager}
+                  </S.HistoryManager>
+                  <S.HistoryH6>
+                    {item.unitHistory.activity} {item.unitHistory.date}
+                  </S.HistoryH6>
+                  <S.HistoryH6>{item.unitHistory.descrip}</S.HistoryH6>
+                </S.HistoryTextContainer>
+              </S.HistoryLi>
+            );
+          })}
+        </S.HistoryContainer>
       </>
     );
   };
@@ -64,7 +64,7 @@ export default function AssetDetail() {
       <>
         <S.Li>
           <S.Label htmlFor='assetName'>이름</S.Label>
-          <S.Input
+          <S.DefaultInput
             type='text'
             id='assetName'
             value={asset.unitAsset.name}
@@ -74,24 +74,47 @@ export default function AssetDetail() {
             disabled={disabled}
           />
         </S.Li>
-        {assetInfoList.map((item) => {
-          let itemName = item.value;
-          console.log(itemName);
-          return (
-            <S.Li>
-              <S.Label htmlFor={item.name}>{item.name}</S.Label>
-              <S.Input
-                type='text'
-                id={item.name}
-                value={asset.unitAsset.itemName}
-                onChange={(e) => {
-                  setText(e.target.value);
-                }}
-                disabled={disabled}
-              />
-            </S.Li>
-          );
-        })}
+
+        <S.RowWrapper>
+          <S.ColumnWrapper>
+            {assetInfoLeftList.map((item) => {
+              let itemName = item.value;
+              return (
+                <S.Li>
+                  <S.Label htmlFor={item.name}>{item.name}</S.Label>
+                  <S.DefaultInput
+                    type='text'
+                    id={item.name}
+                    value={asset.unitAsset[itemName]}
+                    onChange={(e) => {
+                      setText(e.target.value);
+                    }}
+                    disabled={disabled}
+                  />
+                </S.Li>
+              );
+            })}
+          </S.ColumnWrapper>
+          <S.ColumnWrapper>
+            {assetInfoRightList.map((item) => {
+              let itemName = item.value;
+              return (
+                <S.Li>
+                  <S.Label htmlFor={item.name}>{item.name}</S.Label>
+                  <S.DefaultInput
+                    type='text'
+                    id={item.name}
+                    value={asset.unitAsset[itemName]}
+                    onChange={(e) => {
+                      setText(e.target.value);
+                    }}
+                    disabled={disabled}
+                  />
+                </S.Li>
+              );
+            })}
+          </S.ColumnWrapper>
+        </S.RowWrapper>
       </>
     );
   };
