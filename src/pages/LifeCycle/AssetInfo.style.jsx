@@ -196,8 +196,8 @@ export const Message = styled.p`
 `;
 
 export const SubDescription = styled.p`
-    margin-left : 100px;
-    margin-top: 20px;
+    margin-left : 50px;
+    margin-top: 10px;
     flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
     font-size: 19px; // 적당한 글자 크기로 조정하세요.
     text-align: left;
@@ -215,11 +215,12 @@ export const Description = styled.p`
     width: 80%
 `;
 export const SpdDescription = styled.p`
-    margin-left : 100px;
+    margin-left : 50px;
     margin-top: 30px;
     flex-grow: 1; /* 텍스트가 남은 공간을 모두 차지하도록 설정 */
     font-size: 28px; // 적당한 글자 크기로 조정하세요.
     text-align: left;
+    font-weight:600;
     line-height: 1.3;
     width: 80%
 `;
@@ -239,7 +240,7 @@ export const pastVer = styled.p`
     font-size: 20px; // 적당한 글자 크기로 조정하세요.
 `;
 
-export const toButton =styled.p`
+export const toButton =styled.button`
     width: 100px;
     height: 40px;
     border-radius: 5.79px;
@@ -256,8 +257,19 @@ export const toButton =styled.p`
   `;
 
   export const AssetInfoImg = styled.img`
-  width : auto;
+  width : 11%;
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit : cover;
+  margin-top : 10px;
   `; 
+
+  export const AssetInfo = styled.div`
+  margin-left : 100px;
+  display: flex;
+  flex-direction: row;
+  `
+  export const AssetDescription = styled.div`
+  display:flex;
+  flex-direction: column;
+  `

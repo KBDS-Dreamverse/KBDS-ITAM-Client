@@ -37,7 +37,7 @@ export default function ClientSidebar({ setSideToggle, setUserMode }) {
   return (
     <S.SideWrapper>
       <S.Company>{sessionStorage.getItem("userCorp")}</S.Company>
-      <S.Company>{sessionStorage.getItem("userDept")}</S.Company>
+      <S.Company to={`/client/GBP/list`} >{sessionStorage.getItem("userDept")}</S.Company>
       {selectedDepts.map((dept)=>(
         <S.Menu key={dept.deptId} to={`/client/${dept.deptId}/list`}>{dept.deptName}</S.Menu>
       ))}

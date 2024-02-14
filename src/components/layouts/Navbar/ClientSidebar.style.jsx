@@ -21,7 +21,7 @@ export const SideWrapper = styled.div`
   padding: 18px 15px;
 `;
 
-export const TitleBox = styled.div`
+export const TitleBox = styled(Link)`
   display: flex;
   margin-bottom: 8px;
   justify-content: center;

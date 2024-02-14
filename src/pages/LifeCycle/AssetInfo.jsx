@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate  } from 'react-router-dom';
 import * as S from "./AssetInfo.style";
 import axios from "axios";
 import { API } from "../../config";
-
+import ClientAssetSidebar from "../../components/layouts/Navbar/ClientAssetSidebar";
 export default function AssetInfo(){
 
-    const { dept, contId } = useParams();
+    const { deptId, contId } = useParams();
     const [assetData, setAssetData] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchInfo = async () => {
@@ -19,7 +20,7 @@ export default function AssetInfo(){
                     return;
                 }
     
-                const response = await axios.get(API.INFO.replace('{dept}', dept).replace('{contId}', contId), {
+                const response = await axios.get(API.INFO.replace('{deptId}', deptId).replace('{contId}', contId), {
                     headers: {
                         // HTTP 요청 헤더에 userId를 추가합니다.
                         'userId': userId
@@ -33,9 +34,11 @@ export default function AssetInfo(){
         };
     
         fetchInfo();
-      }, [dept, contId]);
+      }, [deptId, contId]);
 
     return(
+        <>
+        <ClientAssetSidebar deptId={deptId} contId={contId}/>
         <S.Wrapper>
             <S.Main>
             {assetData && (
@@ -48,13 +51,19 @@ export default function AssetInfo(){
                 {/* 상태에 저장된 assetData를 표시합니다. */}
                 {assetData && (
                     <div>
-                        <S.SubDescription>
-                            {assetData.corpName} | {assetData.requestStatus}
-                        </S.SubDescription>
-                        <S.SpdDescription>
-                            <S.AssetInfoImg src = {assetData.astImgUrl}>
-                                </S.AssetInfoImg> {assetData.astSpd}
-                        </S.SpdDescription>
+                        <S.AssetInfo>
+                            <S.AssetInfoImg src = {assetData.astImgUrl}/>
+                            <S.AssetDescription>
+                                <S.SpdDescription>
+                                    {assetData.corpName} | {assetData.requestStatus} 
+                                </S.SpdDescription>
+                                <S.SubDescription>
+                                    {assetData.astSpd}
+                                </S.SubDescription>
+                            </S.AssetDescription>
+
+                        </S.AssetInfo>
+                        
                         <S.VersionDes style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div>recently version : {assetData.astVer}</div>
                             {/* <div> 이전버전 보러가기</div> */}
@@ -82,8 +91,14 @@ export default function AssetInfo(){
                         </S.Description>
                     </div>
                 )}
-                <S.toButton style={{float: 'right'}}>요청하기</S.toButton>
+                <S.toButton style={{float: 'right'}}           
+                    onClick={() => {
+                    navigate(`/client/asset/${deptId}/${contId}/request`);
+                    }}>
+                        요청하기</S.toButton>
             </S.Main>
         </S.Wrapper>        
+        </>
+        
     )
 }

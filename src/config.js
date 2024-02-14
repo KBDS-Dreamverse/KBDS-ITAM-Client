@@ -10,7 +10,7 @@ export const API = {
     EXPIRE: `${BASE_URL}/{dept}/{contId}/expire`,
     STOP: `${BASE_URL}/{dept}/{contId}/stop`,
     DASHBOARD: `${BASE_URL}/{dept}/{contId}/dashboard`,
-    INFO: `${BASE_URL}/{dept}/{contId}/info`
+    INFO: `${BASE_URL}/{dept}/{contId}/info`,
     REQUEST_ADMIN_LIST :`${BASE_URL}/getassetadminList/{conId}`,
     DEPT_ASSET: `${BASE_URL}/dept/asset`,
     INSTALLGUIDE: `${BASE_URL}/{dept}/{contId}/installguide`,
