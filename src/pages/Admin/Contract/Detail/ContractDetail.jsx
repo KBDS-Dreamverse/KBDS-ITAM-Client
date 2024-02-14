@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import * as S from './AssetDetail.style';
-import { assetInfos, assetHistoryInfos } from '../../../../utils/data';
-import { assetInfoLeftList, assetInfoRightList } from '../../../../constants';
+import * as S from './ContractDetail.style';
+import { contractInfos, contractHistoryInfos } from '../../../../utils/data';
+import {
+  contractInfoLeftList,
+  contractInfoRightList,
+} from '../../../../constants';
 import useModal from '../../../../hooks/useModal';
 import Modal from '../../../../components/ui/Modal/Modal';
 
-export default function AssetDetail() {
+export default function ContractDetail() {
   const { isOpen, openModal, closeModal } = useModal();
 
   const { id } = useParams();
   const [text, setText] = useState('');
   const [disabled, setDisabled] = useState('disabled');
-  const asset = assetInfos.filter((as) => {
-    if (as.id === id) return as;
+  const contract = contractInfos.filter((con) => {
+    if (con.id === id) return con;
   });
+  console.log('contract', contract);
+  console.log('contract.unitContract', contract[0].unitContract);
 
   const renderAssetFile = () => {
     return (
@@ -44,7 +49,7 @@ export default function AssetDetail() {
         </S.Li>
         <S.Label>활동</S.Label>
         <S.HistoryContainer>
-          {assetHistoryInfos.map((item) => {
+          {contractHistoryInfos.map((item) => {
             return (
               <S.HistoryLi>
                 <S.HistoryManIcon />
@@ -68,11 +73,11 @@ export default function AssetDetail() {
     return (
       <>
         <S.Li>
-          <S.Label htmlFor='assetName'>이름</S.Label>
+          <S.Label htmlFor='contractID'>계약ID</S.Label>
           <S.DefaultInput
             type='text'
-            id='assetName'
-            value={asset[0].unitAsset.name}
+            id='contractID'
+            value={contract[0].unitContract.contractNum}
             onChange={(e) => {
               setText(e.target.value);
             }}
@@ -82,7 +87,7 @@ export default function AssetDetail() {
 
         <S.RowWrapper>
           <S.ColumnWrapper>
-            {assetInfoLeftList.map((item) => {
+            {contractInfoLeftList.map((item) => {
               let itemName = item.value;
               return (
                 <S.Li>
@@ -90,7 +95,7 @@ export default function AssetDetail() {
                   <S.DefaultInput
                     type='text'
                     id={item.name}
-                    value={asset[0].unitAsset[itemName]}
+                    value={contract[0].unitContract[itemName]}
                     onChange={(e) => {
                       setText(e.target.value);
                     }}
@@ -101,7 +106,7 @@ export default function AssetDetail() {
             })}
           </S.ColumnWrapper>
           <S.ColumnWrapper>
-            {assetInfoRightList.map((item) => {
+            {contractInfoRightList.map((item) => {
               let itemName = item.value;
               return (
                 <S.Li>
@@ -109,7 +114,7 @@ export default function AssetDetail() {
                   <S.DefaultInput
                     type='text'
                     id={item.name}
-                    value={asset[0].unitAsset[itemName]}
+                    value={contract[0].unitContract[itemName]}
                     onChange={(e) => {
                       setText(e.target.value);
                     }}
@@ -127,10 +132,11 @@ export default function AssetDetail() {
   return (
     <S.Wrapper>
       {isOpen && (
-        <Modal title='자산 정보가 수정되었습니다.' onClose={closeModal}></Modal>
+        <Modal title='계약 정보가 수정되었습니다.' onClose={closeModal}></Modal>
       )}
+
       <S.Top>
-        <S.Title>{asset[0].unitAsset.name}</S.Title>
+        <S.Title>{contract[0].unitContract.name}</S.Title>
         <S.ButtonWrapper>
           <S.Button onClick={() => setDisabled('')}>수정</S.Button>
           <S.Button
@@ -145,8 +151,7 @@ export default function AssetDetail() {
       </S.Top>
       <S.Body>
         <S.Left>{renderAssetDefaultInfos(disabled)}</S.Left>
-        <S.Middle>{renderAssetMemos(disabled)}</S.Middle>
-        <S.Right>{renderAssetFile(disabled)}</S.Right>
+        <S.Right>{renderAssetMemos(disabled)}</S.Right>
       </S.Body>
     </S.Wrapper>
   );

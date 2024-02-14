@@ -4,12 +4,14 @@ import useModal from '../../../../hooks/useModal';
 import AssetModal from '../Modal/AssetModal';
 import CompanyModal from '../../Company/Modal/CompanyModal';
 import Button80 from '../../../../components/atoms/Button80';
+import { useNavigate } from 'react-router-dom';
 
 export default function AssetRegister() {
   const [assetValue, setAssetValue] = useState('Y');
   const [workFor, setWorkFor] = useState('');
-  const [assetID, setAssetID] = useState();
+  const [assetID, setAssetID] = useState('A000001');
   const { isOpen, openModal, closeModal } = useModal();
+  const navigate = useNavigate();
 
   const renderModal = (workFor) =>
     workFor === 'add' ? (
@@ -26,29 +28,29 @@ export default function AssetRegister() {
 
       <S.Ul>
         <S.Li>
-          <S.Label htmlFor='제품명'>제품명</S.Label>
-          <S.Input410 type='text'></S.Input410>
+          <S.Label htmlFor='assetName'>제품명</S.Label>
+          <S.Input410 id='assetName' type='text'></S.Input410>
         </S.Li>
         <S.Fieldset>
-          <S.Label htmlFor='자산 구분'>자산 구분</S.Label>
+          <S.Label htmlFor='division'>자산 구분</S.Label>
           <S.Label>
-            <S.Input type='radio' name='자산 구분' value='internal' checked />
+            <S.Input type='radio' name='division' value='internal' checked />
             <S.Span>내부자산</S.Span>
           </S.Label>
           <S.Label>
-            <S.Input type='radio' name='자산 구분' value='external' />
+            <S.Input type='radio' name='division' value='external' />
             <S.Span>외부자산</S.Span>
           </S.Label>
         </S.Fieldset>
         <S.Li>
-          <S.Label htmlFor='자산 태그'>자산 태그</S.Label>
+          <S.Label htmlFor='tag'>자산 태그</S.Label>
           <S.InputContainer>
-            <S.Input300 type='text'></S.Input300>
+            <S.Input300 id='tag' type='text'></S.Input300>
             <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('tag');
-                setAssetID('1');
+                setAssetID('A000001');
               }}
             >
               선택
@@ -56,14 +58,14 @@ export default function AssetRegister() {
           </S.InputContainer>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='SW 카테고리'>SW 카테고리</S.Label>
+          <S.Label htmlFor='category'>SW 카테고리</S.Label>
           <S.InputContainer>
-            <S.Input300 type='text'></S.Input300>
+            <S.Input300 id='category' type='text'></S.Input300>
             <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('category');
-                setAssetID('1');
+                setAssetID('A000001');
               }}
             >
               선택
@@ -71,21 +73,21 @@ export default function AssetRegister() {
           </S.InputContainer>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='가격'>가격</S.Label>
+          <S.Label htmlFor='cost'>가격</S.Label>
           <S.InputContainer>
-            <S.Input380 type='text'></S.Input380>
+            <S.Input380 id='cost' type='text'></S.Input380>
             <div>₩</div>
           </S.InputContainer>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='버전'>버전</S.Label>
+          <S.Label htmlFor='version'>버전</S.Label>
           <S.InputContainer>
             <div>5</div>
             <Button80
               onClick={() => {
                 openModal();
                 setWorkFor('version');
-                setAssetID('1');
+                setAssetID('A000001');
               }}
             >
               버전 입력
@@ -93,22 +95,22 @@ export default function AssetRegister() {
           </S.InputContainer>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='담당자 정보'>담당자 정보</S.Label>
-          <S.Input410 type='text'></S.Input410>
+          <S.Label htmlFor='manager'>담당자 정보</S.Label>
+          <S.Input410 id='manager' type='text'></S.Input410>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='이용자 메뉴얼'>이용자 메뉴얼</S.Label>
+          <S.Label htmlFor='manual'>이용자 메뉴얼</S.Label>
           <S.InputContainer>
-            <S.Input380 type='text'></S.Input380>
+            <S.Input380 id='manual' type='text'></S.Input380>
             <S.DropDownButton>
               <S.DropDownImg src='/assets/icon_dropdown.svg'></S.DropDownImg>
             </S.DropDownButton>
           </S.InputContainer>
         </S.Li>
         <S.Li>
-          <S.Label htmlFor='제공 업체'>제공 업체</S.Label>
+          <S.Label htmlFor='provider'>제공 업체</S.Label>
           <S.InputContainer>
-            <S.Input300 type='text'></S.Input300>
+            <S.Input300 id='provider' type='text'></S.Input300>
             <S.DropDownButton>
               <S.DropDownImg src='/assets/icon_dropdown.svg'></S.DropDownImg>
             </S.DropDownButton>
@@ -123,7 +125,13 @@ export default function AssetRegister() {
           </S.InputContainer>
         </S.Li>
       </S.Ul>
-      <S.RegisterButton>자산 등록</S.RegisterButton>
+      <S.RegisterButton
+        onClick={() => {
+          navigate(`/admin/asset/${assetID}/detail`);
+        }}
+      >
+        자산 등록
+      </S.RegisterButton>
     </S.Wrapper>
   );
 }

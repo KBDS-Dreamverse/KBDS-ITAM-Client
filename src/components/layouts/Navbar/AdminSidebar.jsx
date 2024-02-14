@@ -10,8 +10,8 @@ export default function AdminSidebar({ setSideToggle, setUserMode }) {
       <S.Admin>관리자 페이지</S.Admin>
       <S.Menu>대시보드</S.Menu>
       <S.Menu to={'/admin/asset'}>자산관리</S.Menu>
-      <S.Menu>계약관리</S.Menu>
-      <S.Menu>요청관리</S.Menu>
+      <S.Menu to={'/admin/contract'}>계약관리</S.Menu>
+      <S.Menu to={'/admin/request'}>요청관리</S.Menu>
       <S.Menu to={'/admin/company'}>업체관리</S.Menu>
       <S.Menu>현황관리</S.Menu>
       <S.Menu>설정</S.Menu>

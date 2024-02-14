@@ -52,3 +52,33 @@ export const versionList = [
   { name: '설치 가이드' },
   { name: '설치 파일' },
 ];
+
+export const licenseSupplyList = [
+  { name: '패키지 라이선스' },
+  { name: 'Low Volume 라이선스' },
+  { name: 'High Volume 라이선스' },
+  { name: 'SaaS 라이선스' },
+];
+export const licensePeriodList = [
+  { name: '구독 라이선스' },
+  { name: '영구 라이선스' },
+];
+export const licenseUserList = [
+  { name: '동시 사용자수 라이선스' },
+  { name: '사이트 라이선스' },
+  { name: '코어 라이선스' },
+  { name: '1PC 1COPY 라이선스' },
+];
+
+export const contractInfoLeftList = [
+  { name: '계약대상 자산', value: 'assetName' },
+  { name: '시작일', value: 'startDate' },
+  { name: '계약 업체', value: 'provider' },
+  { name: '가격', value: 'cost' },
+];
+export const contractInfoRightList = [
+  { name: '계약번호', value: 'contractNum' },
+  { name: '종료일', value: 'endDate' },
+  { name: '계약 담당자', value: 'manager' },
+  { name: '등록자', value: 'registrant' },
+];

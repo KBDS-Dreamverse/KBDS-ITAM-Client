@@ -27,6 +27,13 @@ export const CheckboxGroup = styled.div`
   justify-content: space-between;
   algin-content: center;
 `;
+export const CheckBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  algin-content: center;
+`;
+
 export const Ul = styled.ul`
   display: flex;
   flex-direction: column;

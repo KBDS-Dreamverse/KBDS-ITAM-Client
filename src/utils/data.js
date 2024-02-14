@@ -39,7 +39,7 @@ export const companyInfos = [
 
 export const assetInfos = [
   {
-    id: 1,
+    id: 'A000001',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -54,7 +54,7 @@ export const assetInfos = [
     },
   },
   {
-    id: 2,
+    id: 'A000002',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -69,7 +69,7 @@ export const assetInfos = [
     },
   },
   {
-    id: 3,
+    id: 'A000003',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -84,7 +84,7 @@ export const assetInfos = [
     },
   },
   {
-    id: 4,
+    id: 'A000004',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -99,7 +99,7 @@ export const assetInfos = [
     },
   },
   {
-    id: 5,
+    id: 'A000005',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -114,7 +114,7 @@ export const assetInfos = [
     },
   },
   {
-    id: 5,
+    id: 'A000006',
     unitAsset: {
       name: 'Microsoft Word 2010',
       division: '내부자산',
@@ -282,3 +282,129 @@ export const assetHistoryInfos = [
     },
   },
 ];
+export const contractInfos = [
+  {
+    id: 'C000001',
+    unitContract: {
+      contractNum: 'C000001',
+      name: 'TV Calibration Software',
+      assetName: 'Microsoft Word 2010',
+      company: 'SAMSUNG',
+      manager: '김의진',
+      cost: '₩285,447,111.8469',
+      registrant: '조익현',
+      startDate: '2022-09-25',
+      endDate: '2026-09-25',
+      File: '',
+      Memo: '비밀',
+    },
+  },
+];
+export const contractHistoryInfos = [
+  {
+    id: 1,
+    unitHistory: {
+      manager: '시스템 관리자',
+      activity: '필드 변경',
+      date: '2024-01-24 11:47',
+      descrip: 'State: In Use',
+    },
+  },
+  {
+    id: 2,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 2,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 3,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+  {
+    id: 4,
+    unitHistory: {
+      manager: '담당자',
+      activity: '계약 체결',
+      date: '2024-01-22 11:47',
+      descrip: '일련번호: MS9323',
+    },
+  },
+];
+
+// {
+//   id: 'C000002',
+//   unitContract: {
+//     name: 'TV Calibration Software',
+//     assetName: 'Microsoft Word 2010',
+//     company: 'SAMSUNG',
+//     manager: '김의진',
+//     cost: '₩285,447,111.8469',
+//     registrant: '조익현',
+//     startDate: '2022-09-25',
+//     endDate: '2026-09-25',
+//     File: '',
+//     Memo: '비밀',
+//   },
+// },
+// {
+//   id: 'C000003',
+//   unitContract: {
+//     name: 'TV Calibration Software',
+//     assetName: 'Microsoft Word 2010',
+//     company: 'SAMSUNG',
+//     manager: '김의진',
+//     cost: '₩285,447,111.8469',
+//     registrant: '조익현',
+//     startDate: '2022-09-25',
+//     endDate: '2026-09-25',
+//     File: '',
+//     Memo: '비밀',
+//   },
+// },
+// {
+//   id: 'C000004',
+//   unitContract: {
+//     name: 'TV Calibration Software',
+//     assetName: 'Microsoft Word 2010',
+//     company: 'SAMSUNG',
+//     manager: '김의진',
+//     cost: '₩285,447,111.8469',
+//     registrant: '조익현',
+//     startDate: '2022-09-25',
+//     endDate: '2026-09-25',
+//     File: '',
+//     Memo: '비밀',
+//   },
+// },
+// {
+//   id: 'C000005',
+//   unitContract: {
+//     name: 'TV Calibration Software',
+//     assetName: 'Microsoft Word 2010',
+//     company: 'SAMSUNG',
+//     manager: '김의진',
+//     cost: '₩285,447,111.8469',
+//     registrant: '조익현',
+//     startDate: '2022-09-25',
+//     endDate: '2026-09-25',
+//     File: '',
+//     Memo: '비밀',
+//   },
+// },
