@@ -53,9 +53,9 @@ function ContentBox() {
         <Route path='/client/asset/:deptId/:contId/dashboard' element={<AssetDashBoard/>}/>
       
         <Route path='/client/asset/:deptId/:contId/expire' element={<AssetExpire/>}/>
-
-
         <Route path='/client/:deptId/list' element={<DepartmentAssetList/>}/>
+        <Route path='/client/:deptId/:contId/info' element={<AssetInfo/>}/>
+
       </Routes>
     </div>
   );
