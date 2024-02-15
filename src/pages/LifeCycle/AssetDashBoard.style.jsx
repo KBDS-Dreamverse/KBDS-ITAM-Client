@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 export const Wrapper = styled.div`
 width: 100%;
@@ -69,12 +68,13 @@ export const LicNamesContainer = styled.div`
   align-items: flex-start; // 항목들을 수직 방향으로 상단 정렬
   font-size: 24px; // 글자 크기
   color: #333; // 글자 색상
+  margin-left : 20px;
 `;
 
 export const LicValContainer = styled.div`
   display: flex;
   flex-direction: column; // 내부 항목들을 수직으로 나열
-  justify-content: center;
+
   align-items: center;
   margin-top: 20px;
   font-size: 16px;
@@ -99,3 +99,13 @@ export const ChartContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const LicenseInfo = styled.div`
+margin-top : 50px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+`
+export const LicName = styled.div`
+font-size : 20px;
+font-weight: 600;
+`

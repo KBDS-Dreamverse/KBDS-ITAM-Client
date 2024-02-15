@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
 import * as S from './AssetDashBoard.style'; // 이 부분은 실제 스타일 파일에 맞게 변경해야 합니다.
@@ -49,30 +48,30 @@ export default function AssetDashBoard() {
       case 'Low Volume':
         return (
             <S.LicValContainer>
-                <div>[{licName}]</div>
+                <S.LicName>[{licName}]</S.LicName>
                 <div>버전 : {licValues.splyVer}</div>
             </S.LicValContainer>
         );
       case 'SaaS':
         return (
           <S.LicValContainer>
-            <div>[{licName}]</div>
+            <S.LicName>[{licName}]</S.LicName>
             <div>버전 : {licValues.splyVer}</div>
-            <div>접근 URL : {licValues.acsUrl}</div>
+            <div >접근 URL : <a href="{licValues.acsUrl}">{licValues.acsUrl}</a></div>
           </S.LicValContainer>
         );
       case '구독':
       case '영구':
         return (
           <S.LicValContainer>
-            <div>[{licName}]</div>
+            <S.LicName>[{licName}]</S.LicName>
             <div>사용 기간 : {licValues.contStartDate} ~ {licValues.contEndDate}</div>
           </S.LicValContainer>
         );
       case '동시 사용자수':
         return (
           <S.LicValContainer>
-             <div>[{licName}]</div>
+             <S.LicName>[{licName}]</S.LicName>
              <S.ChartContainer>
              <PieChart curr={licValues.currUsers} max={licValues.maxUsersLimit} licName={licName}/>
              </S.ChartContainer>
@@ -84,7 +83,7 @@ export default function AssetDashBoard() {
       case '사이트':
         return (
           <S.LicValContainer>
-            <div>[{licName}]</div>
+            <S.LicName>[{licName}]</S.LicName>
              <div>접근 가능한 IP 범위 : {licValues.ipRange}</div>
              <div>현재 사용자 IP : {licValues.userIp}</div>
              <div>현재 사용자 Port : {licValues.userPort}</div>
@@ -94,7 +93,7 @@ export default function AssetDashBoard() {
       case '코어':
         return (
           <S.LicValContainer>
-            <div>[{licName}]</div>
+            <S.LicName>[{licName}]</S.LicName>
             <S.ChartContainer>
                 <PieChart curr={licValues.currCore} max={licValues.maxCoreLimit} licName={licName} />
             </S.ChartContainer>
@@ -106,7 +105,7 @@ export default function AssetDashBoard() {
       case '1pc1copy':
         return (
             <S.LicValContainer>
-            <div>[{licName}]</div>
+            <S.LicName>[{licName}]</S.LicName>
             <div>라이선스 키 : {licValues.licenseKey}</div>
             </S.LicValContainer>
         );
@@ -114,7 +113,7 @@ export default function AssetDashBoard() {
       case '서버접속':
         return (
           <S.LicValContainer>
-            <div>{licName}</div>
+            <S.LicName>[{licName}]</S.LicName>
             <input type="password" placeholder="비밀번호 입력"/>
           </S.LicValContainer>
         );
@@ -142,13 +141,13 @@ export default function AssetDashBoard() {
                         </React.Fragment>
                     ))}
                 </S.LicNamesContainer>
-                <div>
+                <S.LicenseInfo >
                 {dashboardInfo?.licNames.map((name, index) => (
                     <React.Fragment key={index}>
                     {getLicenseComponent(name, dashboardInfo.licValues)}
                     </React.Fragment>
                 ))}
-                </div>
+                </S.LicenseInfo>
 
                 </S.Body>
                 
